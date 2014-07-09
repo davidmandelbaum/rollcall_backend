@@ -45,4 +45,6 @@ gem 'rails_12factor', group: :production
 gem 'paperclip'
 gem 'aws-sdk'
 
+gem 'devise'
+
 ruby "2.1.1"
