@@ -3329,3 +3329,232 @@ SQLite3::SQLException: duplicate column name: email: ALTER TABLE "users" ADD "em
   [1m[35m (0.0ms)[0m  rollback transaction
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-09 01:11:53 -0400
+
+NoMethodError (undefined method `devise_for' for #<ActionDispatch::Routing::Mapper:0x007faddb214680>):
+  config/routes.rb:2:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-09 01:12:09 -0400
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 5ms
+
+NoMethodError (undefined method `devise' for #<Class:0x007faddd41c908>):
+  app/models/user.rb:4:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:7:in `index'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-09 01:12:10 -0400
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 4ms
+
+NoMethodError (undefined method `devise' for #<Class:0x007faddbd30cd0>):
+  app/models/user.rb:4:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:7:in `index'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-09 01:12:17 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 136ms (Views: 103.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-07-09 01:12:17 -0400
+
+
+Started GET "/assets/memberships.css?body=1" for 127.0.0.1 at 2014-07-09 01:12:17 -0400
+
+
+Started GET "/assets/roll_calls.css?body=1" for 127.0.0.1 at 2014-07-09 01:12:17 -0400
+
+
+Started GET "/assets/likes.css?body=1" for 127.0.0.1 at 2014-07-09 01:12:17 -0400
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-07-09 01:12:17 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-07-09 01:12:17 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-07-09 01:12:17 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-09 01:12:17 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-09 01:12:17 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-09 01:12:17 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-09 01:12:17 -0400
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-07-09 01:12:17 -0400
+
+
+Started GET "/assets/likes.js?body=1" for 127.0.0.1 at 2014-07-09 01:12:17 -0400
+
+
+Started GET "/assets/memberships.js?body=1" for 127.0.0.1 at 2014-07-09 01:12:17 -0400
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-07-09 01:12:17 -0400
+
+
+Started GET "/assets/roll_calls.js?body=1" for 127.0.0.1 at 2014-07-09 01:12:17 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-07-09 01:12:17 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-09 01:12:17 -0400
+
+
+Started GET "/users/new" for 127.0.0.1 at 2014-07-09 01:12:20 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (56.1ms)
+  Rendered users/new.html.erb within layouts/application (64.8ms)
+Completed 200 OK in 75ms (Views: 72.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-07-09 01:12:33 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DpSj/Yva+gNtiWMWJroxO4rYapl78fz6+NgyE+bxRHU=", "user"=>{"phone_number"=>"9177637884", "password"=>"[FILTERED]", "first_name"=>"David", "last_name"=>"Mandy", "joined(1i)"=>"2014", "joined(2i)"=>"7", "joined(3i)"=>"9", "joined(4i)"=>"05", "joined(5i)"=>"12", "last_activity(1i)"=>"2014", "last_activity(2i)"=>"7", "last_activity(3i)"=>"9", "last_activity(4i)"=>"05", "last_activity(5i)"=>"12", "email"=>"bla", "UDID"=>"10234", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fec2be67458 @tempfile=#<Tempfile:/var/folders/2s/v61vywrn25ddp251x94jjv4c0000gn/T/RackMultipart20140709-53749-161dbp8>, @original_filename="Roll Call View v2.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"Roll Call View v2.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 73ms
+
+NoMethodError (undefined method `encrypted_password=' for #<User:0x007fec2be541f0>):
+  app/controllers/users_controller.rb:27:in `create'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-07-09 01:13:44 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DpSj/Yva+gNtiWMWJroxO4rYapl78fz6+NgyE+bxRHU=", "user"=>{"phone_number"=>"9177637884", "password"=>"[FILTERED]", "first_name"=>"David", "last_name"=>"Mandy", "joined(1i)"=>"2014", "joined(2i)"=>"7", "joined(3i)"=>"9", "joined(4i)"=>"05", "joined(5i)"=>"12", "last_activity(1i)"=>"2014", "last_activity(2i)"=>"7", "last_activity(3i)"=>"9", "last_activity(4i)"=>"05", "last_activity(5i)"=>"12", "email"=>"bla", "UDID"=>"10234", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fec2c4ea6b8 @tempfile=#<Tempfile:/var/folders/2s/v61vywrn25ddp251x94jjv4c0000gn/T/RackMultipart20140709-53749-7u45uv>, @original_filename="Roll Call View v2.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"Roll Call View v2.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 72ms
+
+NoMethodError (undefined method `encrypted_password=' for #<User:0x007fec2c4c8248>):
+  app/controllers/users_controller.rb:27:in `create'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-07-09 01:14:00 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DpSj/Yva+gNtiWMWJroxO4rYapl78fz6+NgyE+bxRHU=", "user"=>{"phone_number"=>"9177637884", "password"=>"[FILTERED]", "first_name"=>"David", "last_name"=>"Mandy", "joined(1i)"=>"2014", "joined(2i)"=>"7", "joined(3i)"=>"9", "joined(4i)"=>"05", "joined(5i)"=>"12", "last_activity(1i)"=>"2014", "last_activity(2i)"=>"7", "last_activity(3i)"=>"9", "last_activity(4i)"=>"05", "last_activity(5i)"=>"12", "email"=>"bla", "UDID"=>"10234", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fec2c59b6e8 @tempfile=#<Tempfile:/var/folders/2s/v61vywrn25ddp251x94jjv4c0000gn/T/RackMultipart20140709-53749-1rfl0uj>, @original_filename="Roll Call View v2.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"Roll Call View v2.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create User"}
+Command :: file -b --mime '/var/folders/2s/v61vywrn25ddp251x94jjv4c0000gn/T/7c436fda345b49225b53c2a3ceafc6cc20140709-53749-fceyv8.png'
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/var/folders/2s/v61vywrn25ddp251x94jjv4c0000gn/T/7c436fda345b49225b53c2a3ceafc6cc20140709-53749-1bh6mm6.png'
+Binary data inserted for `string` type on column `avatar_content_type`
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("UDID", "avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "created_at", "email", "first_name", "joined", "last_activity", "last_name", "password", "phone_number", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["UDID", "10234"], ["avatar_content_type", "image/png"], ["avatar_file_name", "Roll_Call_View_v2.png"], ["avatar_file_size", 694862], ["avatar_updated_at", "2014-07-09 05:14:00.653085"], ["created_at", "2014-07-09 05:14:00.695349"], ["email", "bla"], ["first_name", "David"], ["joined", "2014-07-09 05:12:00.000000"], ["last_activity", "2014-07-09 05:12:00.000000"], ["last_name", "Mandy"], ["password", "test"], ["phone_number", "9177637884"], ["updated_at", "2014-07-09 05:14:00.695349"]]
+[paperclip] saving /users/avatars/000/000/001/original/Roll_Call_View_v2.png
+[AWS S3 200 2.32877 0 retries] put_object(:acl=>:public_read,:bucket_name=>"rollcall_backend",:content_length=>694862,:content_type=>"image/png",:data=>Paperclip::UploadedFileAdapter: Roll Call View v2.png,:key=>"users/avatars/000/000/001/original/Roll_Call_View_v2.png")  
+
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 2677ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-07-09 01:14:03 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 16ms (Views: 12.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-07-09 01:14:03 -0400
+
+
+Started GET "/assets/memberships.css?body=1" for 127.0.0.1 at 2014-07-09 01:14:03 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-07-09 01:14:03 -0400
+
+
+Started GET "/assets/roll_calls.css?body=1" for 127.0.0.1 at 2014-07-09 01:14:03 -0400
+
+
+Started GET "/assets/likes.css?body=1" for 127.0.0.1 at 2014-07-09 01:14:03 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-07-09 01:14:03 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-09 01:14:03 -0400
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-07-09 01:14:03 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-09 01:14:03 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-09 01:14:03 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-09 01:14:03 -0400
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-07-09 01:14:03 -0400
+
+
+Started GET "/assets/likes.js?body=1" for 127.0.0.1 at 2014-07-09 01:14:03 -0400
+
+
+Started GET "/assets/memberships.js?body=1" for 127.0.0.1 at 2014-07-09 01:14:03 -0400
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-07-09 01:14:03 -0400
+
+
+Started GET "/assets/roll_calls.js?body=1" for 127.0.0.1 at 2014-07-09 01:14:03 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-07-09 01:14:03 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-09 01:14:03 -0400
+
+
+Started GET "/users" for 127.0.0.1 at 2014-07-09 01:14:07 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.3ms)
