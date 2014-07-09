@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140709034700) do
+ActiveRecord::Schema.define(version: 20140709035415) do
 
   create_table "groups", force: true do |t|
     t.string   "name"
@@ -21,11 +21,39 @@ ActiveRecord::Schema.define(version: 20140709034700) do
     t.datetime "updated_at"
   end
 
+  create_table "likes", force: true do |t|
+    t.integer  "photo_id"
+    t.integer  "user_id"
+    t.datetime "time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "memberships", force: true do |t|
     t.integer  "user_id"
     t.integer  "group_id"
     t.boolean  "owner"
     t.datetime "joined"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "photos", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "roll_call_id"
+    t.datetime "time"
+    t.text     "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roll_calls", force: true do |t|
+    t.datetime "started"
+    t.datetime "ended"
+    t.integer  "duration"
+    t.text     "description"
+    t.integer  "group_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
