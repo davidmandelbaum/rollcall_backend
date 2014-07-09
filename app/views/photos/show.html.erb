@@ -20,5 +20,12 @@
   <%= @photo.location %>
 </p>
 
+<% if @photo.picture %>
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag @photo.picture.url %>
+</p>
+<% end %>
+
 <%= link_to 'Edit', edit_photo_path(@photo) %> |
 <%= link_to 'Back', photos_path %>
