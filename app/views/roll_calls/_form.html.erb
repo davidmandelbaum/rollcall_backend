@@ -1,0 +1,41 @@
+<%= form_for(@roll_call) do |f| %>
+  <% if @roll_call.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@roll_call.errors.count, "error") %> prohibited this roll_call from being saved:</h2>
+
+      <ul>
+      <% @roll_call.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :started %><br>
+    <%= f.datetime_select :started %>
+  </div>
+  <div class="field">
+    <%= f.label :ended %><br>
+    <%= f.datetime_select :ended %>
+  </div>
+  <div class="field">
+    <%= f.label :duration %><br>
+    <%= f.number_field :duration %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :group_id %><br>
+    <%= f.number_field :group_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

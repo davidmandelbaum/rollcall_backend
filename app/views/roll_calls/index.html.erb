@@ -1,0 +1,35 @@
+<h1>Listing roll_calls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Started</th>
+      <th>Ended</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Group</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @roll_calls.each do |roll_call| %>
+      <tr>
+        <td><%= roll_call.started %></td>
+        <td><%= roll_call.ended %></td>
+        <td><%= roll_call.duration %></td>
+        <td><%= roll_call.description %></td>
+        <td><%= roll_call.group_id %></td>
+        <td><%= roll_call.user_id %></td>
+        <td><%= link_to 'Show', roll_call %></td>
+        <td><%= link_to 'Edit', edit_roll_call_path(roll_call) %></td>
+        <td><%= link_to 'Destroy', roll_call, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Roll call', new_roll_call_path %>
