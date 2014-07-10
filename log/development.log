@@ -3558,3 +3558,220 @@ Processing by UsersController#index as HTML
   [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
   Rendered users/index.html.erb within layouts/application (4.5ms)
 Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-09 01:18:02 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/roll_calls.css?body=1" for 127.0.0.1 at 2014-07-09 01:18:02 -0400
+
+
+Started GET "/assets/memberships.css?body=1" for 127.0.0.1 at 2014-07-09 01:18:02 -0400
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-07-09 01:18:02 -0400
+
+
+Started GET "/assets/likes.css?body=1" for 127.0.0.1 at 2014-07-09 01:18:02 -0400
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-07-09 01:18:02 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-07-09 01:18:02 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-07-09 01:18:02 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-09 01:18:03 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-09 01:18:03 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-09 01:18:03 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-09 01:18:03 -0400
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-07-09 01:18:03 -0400
+
+
+Started GET "/assets/likes.js?body=1" for 127.0.0.1 at 2014-07-09 01:18:03 -0400
+
+
+Started GET "/assets/memberships.js?body=1" for 127.0.0.1 at 2014-07-09 01:18:03 -0400
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-07-09 01:18:03 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-07-09 01:18:03 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-09 01:18:03 -0400
+
+
+Started GET "/assets/roll_calls.js?body=1" for 127.0.0.1 at 2014-07-09 01:18:03 -0400
+
+
+Started GET "/users/new" for 127.0.0.1 at 2014-07-09 01:18:05 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (13.6ms)
+  Rendered users/new.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-07-09 01:18:18 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DpSj/Yva+gNtiWMWJroxO4rYapl78fz6+NgyE+bxRHU=", "user"=>{"phone_number"=>"000", "password"=>"[FILTERED]", "first_name"=>"test", "last_name"=>"ln", "joined(1i)"=>"2014", "joined(2i)"=>"7", "joined(3i)"=>"9", "joined(4i)"=>"05", "joined(5i)"=>"18", "last_activity(1i)"=>"2014", "last_activity(2i)"=>"7", "last_activity(3i)"=>"9", "last_activity(4i)"=>"05", "last_activity(5i)"=>"18", "email"=>"bla", "UDID"=>"111", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fec2caa7330 @tempfile=#<Tempfile:/var/folders/2s/v61vywrn25ddp251x94jjv4c0000gn/T/RackMultipart20140709-53749-m640su>, @original_filename="Splash Screen.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"Splash Screen.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create User"}
+Command :: file -b --mime '/var/folders/2s/v61vywrn25ddp251x94jjv4c0000gn/T/0bc31fce1d349baebf7ed6978ee7c2c920140709-53749-7slps4.png'
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/var/folders/2s/v61vywrn25ddp251x94jjv4c0000gn/T/0bc31fce1d349baebf7ed6978ee7c2c920140709-53749-qzkz94.png'
+Binary data inserted for `string` type on column `avatar_content_type`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("UDID", "avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "created_at", "email", "first_name", "joined", "last_activity", "last_name", "password", "phone_number", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["UDID", "111"], ["avatar_content_type", "image/png"], ["avatar_file_name", "Splash_Screen.png"], ["avatar_file_size", 199433], ["avatar_updated_at", "2014-07-09 05:18:18.251586"], ["created_at", "2014-07-09 05:18:18.304263"], ["email", "bla"], ["first_name", "test"], ["joined", "2014-07-09 05:18:00.000000"], ["last_activity", "2014-07-09 05:18:00.000000"], ["last_name", "ln"], ["password", "000"], ["phone_number", "000"], ["updated_at", "2014-07-09 05:18:18.304263"]]
+[paperclip] saving /users/avatars/000/000/002/original/Splash_Screen.png
+[AWS S3 200 1.857497 0 retries] put_object(:acl=>:public_read,:bucket_name=>"rollcall_backend",:content_length=>199433,:content_type=>"image/png",:data=>Paperclip::UploadedFileAdapter: Splash Screen.png,:key=>"users/avatars/000/000/002/original/Splash_Screen.png")  
+
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 1945ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2014-07-09 01:18:20 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-09 01:18:20 -0400
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-07-09 01:18:20 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-09 01:18:20 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-09 01:18:20 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-07-09 01:18:20 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-09 01:18:20 -0400
+
+
+Started GET "/assets/likes.js?body=1" for 127.0.0.1 at 2014-07-09 01:18:20 -0400
+
+
+Started GET "/assets/memberships.js?body=1" for 127.0.0.1 at 2014-07-09 01:18:20 -0400
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-07-09 01:18:20 -0400
+
+
+Started GET "/assets/roll_calls.js?body=1" for 127.0.0.1 at 2014-07-09 01:18:20 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-09 01:18:20 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-07-09 01:18:20 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-09 01:21:55 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-07-09 01:21:55 -0400
+
+
+Started GET "/assets/likes.css?body=1" for 127.0.0.1 at 2014-07-09 01:21:55 -0400
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-07-09 01:21:55 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-07-09 01:21:55 -0400
+
+
+Started GET "/assets/roll_calls.css?body=1" for 127.0.0.1 at 2014-07-09 01:21:55 -0400
+
+
+Started GET "/assets/memberships.css?body=1" for 127.0.0.1 at 2014-07-09 01:21:55 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-07-09 01:21:55 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-09 01:21:55 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-09 01:21:55 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-09 01:21:55 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-09 01:21:55 -0400
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-07-09 01:21:55 -0400
+
+
+Started GET "/assets/likes.js?body=1" for 127.0.0.1 at 2014-07-09 01:21:55 -0400
+
+
+Started GET "/assets/memberships.js?body=1" for 127.0.0.1 at 2014-07-09 01:21:55 -0400
+
+
+Started GET "/assets/roll_calls.js?body=1" for 127.0.0.1 at 2014-07-09 01:21:55 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-07-09 01:21:55 -0400
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-07-09 01:21:55 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-09 01:21:55 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAuthKeyToUser (20140710033233)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "auth_key" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "users" ADD "expiration" datetime
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140710033233"]]
+  [1m[35m (6.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created" datetime, "last_activity" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "likes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "photo_id" integer, "user_id" integer, "time" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "group_id" integer, "owner" boolean, "joined" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "roll_call_id" integer, "time" datetime, "location" text, "created_at" datetime, "updated_at" datetime, "picture_file_name" varchar(255), "picture_content_type" varchar(255), "picture_file_size" integer, "picture_updated_at" datetime) 
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "roll_calls" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "started" datetime, "ended" datetime, "duration" integer, "description" text, "group_id" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "phone_number" varchar(255), "password" varchar(255), "first_name" varchar(255), "last_name" varchar(255), "joined" datetime, "last_activity" datetime, "email" varchar(255), "UDID" varchar(255), "created_at" datetime, "updated_at" datetime, "avatar_file_name" varchar(255), "avatar_content_type" varchar(255), "avatar_file_size" integer, "avatar_updated_at" datetime, "auth_key" varchar(255), "expiration" datetime) 
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140710033233')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140709034042')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140709034641')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140709034700')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140709035226')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140709035355')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140709035415')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140709041434')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140709041513')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
