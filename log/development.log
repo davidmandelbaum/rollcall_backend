@@ -3775,3 +3775,1084 @@ Migrating to AddAuthKeyToUser (20140710033233)
   [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140709041434')
   [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140709041513')[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-09 23:41:04 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.1.0) lib/active_record/migration.rb:389:in `check_pending!'
+  activerecord (4.1.0) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/david/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/david/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/david/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (34.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-07-09 23:41:05 -0400
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.1.0) lib/active_record/migration.rb:389:in `check_pending!'
+  activerecord (4.1.0) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/david/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/david/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/david/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateAuthKeys (20140710033618)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "auth_keys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "auth_key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140710033618"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/users" for 127.0.0.1 at 2014-07-09 23:41:16 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 16ms
+
+NoMethodError (undefined method `attr_accessible' for #<Class:0x007fdf842bca08>):
+  app/models/auth_key.rb:2:in `<class:AuthKey>'
+  app/models/auth_key.rb:1:in `<top (required)>'
+  app/controllers/application_controller.rb:31:in `restrict_access_by_params'
+  app/controllers/application_controller.rb:12:in `restrict_access'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-07-09 23:41:55 -0400
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 5ms
+
+NoMethodError (undefined method `find_by_token' for #<Class:0x007fdf846135d0>):
+  app/controllers/application_controller.rb:31:in `restrict_access_by_params'
+  app/controllers/application_controller.rb:12:in `restrict_access'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-07-09 23:42:56 -0400
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 6ms
+
+NameError (undefined local variable or method `token' for #<UsersController:0x007fdf844989d0>):
+  app/controllers/application_controller.rb:31:in `restrict_access_by_params'
+  app/controllers/application_controller.rb:12:in `restrict_access'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-07-09 23:43:06 -0400
+Processing by UsersController#index as HTML
+  [1m[35mAuthKey Load (0.6ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."token" IS NULL LIMIT 1
+SQLite3::SQLException: no such column: auth_keys.token: SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."token" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 10ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: auth_keys.token: SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."token" IS NULL LIMIT 1):
+  app/controllers/application_controller.rb:31:in `restrict_access_by_params'
+  app/controllers/application_controller.rb:12:in `restrict_access'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-07-09 23:43:52 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 102ms (Views: 87.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-07-09 23:43:52 -0400
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-07-09 23:43:52 -0400
+
+
+Started GET "/assets/likes.css?body=1" for 127.0.0.1 at 2014-07-09 23:43:52 -0400
+
+
+Started GET "/assets/memberships.css?body=1" for 127.0.0.1 at 2014-07-09 23:43:52 -0400
+
+
+Started GET "/assets/roll_calls.css?body=1" for 127.0.0.1 at 2014-07-09 23:43:52 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-07-09 23:43:52 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-07-09 23:43:52 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-09 23:43:52 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-09 23:43:52 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-09 23:43:52 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-09 23:43:52 -0400
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-07-09 23:43:52 -0400
+
+
+Started GET "/assets/likes.js?body=1" for 127.0.0.1 at 2014-07-09 23:43:52 -0400
+
+
+Started GET "/assets/memberships.js?body=1" for 127.0.0.1 at 2014-07-09 23:43:52 -0400
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-07-09 23:43:52 -0400
+
+
+Started GET "/assets/roll_calls.js?body=1" for 127.0.0.1 at 2014-07-09 23:43:52 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-07-09 23:43:52 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-09 23:43:52 -0400
+
+
+Started GET "/users/new" for 127.0.0.1 at 2014-07-09 23:43:54 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (54.0ms)
+  Rendered users/new.html.erb within layouts/application (59.8ms)
+Completed 200 OK in 69ms (Views: 66.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-07-09 23:44:04 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DpSj/Yva+gNtiWMWJroxO4rYapl78fz6+NgyE+bxRHU=", "user"=>{"phone_number"=>"9177637884", "password"=>"[FILTERED]", "first_name"=>"david", "last_name"=>"mandy", "joined(1i)"=>"2014", "joined(2i)"=>"7", "joined(3i)"=>"10", "joined(4i)"=>"03", "joined(5i)"=>"43", "last_activity(1i)"=>"2014", "last_activity(2i)"=>"7", "last_activity(3i)"=>"10", "last_activity(4i)"=>"03", "last_activity(5i)"=>"43", "email"=>"test@gmail.com", "UDID"=>"bla"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("UDID", "created_at", "email", "first_name", "joined", "last_activity", "last_name", "password", "phone_number", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["UDID", "bla"], ["created_at", "2014-07-10 03:44:04.742314"], ["email", "test@gmail.com"], ["first_name", "david"], ["joined", "2014-07-10 03:43:00.000000"], ["last_activity", "2014-07-10 03:43:00.000000"], ["last_name", "mandy"], ["password", "test"], ["phone_number", "9177637884"], ["updated_at", "2014-07-10 03:44:04.742314"]]
+  [1m[35m (0.6ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 24ms
+
+NoMethodError (undefined method `token=' for #<AuthKey:0x007fdf84392ce8>):
+  app/models/auth_key.rb:10:in `generate_token'
+  app/models/user.rb:28:in `create_auth_key'
+  app/controllers/users_controller.rb:32:in `block in create'
+  app/controllers/users_controller.rb:31:in `create'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "auth_keys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "auth_key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created" datetime, "last_activity" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "likes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "photo_id" integer, "user_id" integer, "time" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "group_id" integer, "owner" boolean, "joined" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "roll_call_id" integer, "time" datetime, "location" text, "created_at" datetime, "updated_at" datetime, "picture_file_name" varchar(255), "picture_content_type" varchar(255), "picture_file_size" integer, "picture_updated_at" datetime) [0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "roll_calls" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "started" datetime, "ended" datetime, "duration" integer, "description" text, "group_id" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "phone_number" varchar(255), "password" varchar(255), "first_name" varchar(255), "last_name" varchar(255), "joined" datetime, "last_activity" datetime, "email" varchar(255), "UDID" varchar(255), "created_at" datetime, "updated_at" datetime, "avatar_file_name" varchar(255), "avatar_content_type" varchar(255), "avatar_file_size" integer, "avatar_updated_at" datetime, "auth_key" varchar(255), "expiration" datetime) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140710033618')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140709034042')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140709034641')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140709034700')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140709035226')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140709035355')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140709035415')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140709041434')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140709041513')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-09 23:44:52 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mAuthKey Load (0.3ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."token" IS NULL LIMIT 1
+SQLite3::SQLException: no such column: auth_keys.token: SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."token" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 3ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: auth_keys.token: SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."token" IS NULL LIMIT 1):
+  app/controllers/application_controller.rb:31:in `restrict_access_by_params'
+  app/controllers/application_controller.rb:12:in `restrict_access'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-09 23:44:57 -0400
+Processing by UsersController#index as HTML
+  [1m[36mAuthKey Load (0.4ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."token" IS NULL LIMIT 1[0m
+SQLite3::SQLException: no such column: auth_keys.token: SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."token" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 3ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: auth_keys.token: SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."token" IS NULL LIMIT 1):
+  app/controllers/application_controller.rb:31:in `restrict_access_by_params'
+  app/controllers/application_controller.rb:12:in `restrict_access'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.4ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-09 23:45:04 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 11.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/likes.css?body=1" for 127.0.0.1 at 2014-07-09 23:45:04 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-07-09 23:45:04 -0400
+
+
+Started GET "/assets/memberships.css?body=1" for 127.0.0.1 at 2014-07-09 23:45:04 -0400
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-07-09 23:45:04 -0400
+
+
+Started GET "/assets/roll_calls.css?body=1" for 127.0.0.1 at 2014-07-09 23:45:04 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-07-09 23:45:04 -0400
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-07-09 23:45:04 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-09 23:45:04 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-09 23:45:04 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-09 23:45:04 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-09 23:45:04 -0400
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-07-09 23:45:04 -0400
+
+
+Started GET "/assets/likes.js?body=1" for 127.0.0.1 at 2014-07-09 23:45:04 -0400
+
+
+Started GET "/assets/memberships.js?body=1" for 127.0.0.1 at 2014-07-09 23:45:04 -0400
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-07-09 23:45:04 -0400
+
+
+Started GET "/assets/roll_calls.js?body=1" for 127.0.0.1 at 2014-07-09 23:45:04 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-07-09 23:45:04 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-09 23:45:04 -0400
+
+
+Started GET "/users/new" for 127.0.0.1 at 2014-07-09 23:45:05 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (26.2ms)
+  Rendered users/new.html.erb within layouts/application (28.4ms)
+Completed 200 OK in 44ms (Views: 41.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-07-09 23:45:14 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DpSj/Yva+gNtiWMWJroxO4rYapl78fz6+NgyE+bxRHU=", "user"=>{"phone_number"=>"9177637884", "password"=>"[FILTERED]", "first_name"=>"david", "last_name"=>"mandy", "joined(1i)"=>"2014", "joined(2i)"=>"7", "joined(3i)"=>"10", "joined(4i)"=>"03", "joined(5i)"=>"45", "last_activity(1i)"=>"2014", "last_activity(2i)"=>"7", "last_activity(3i)"=>"10", "last_activity(4i)"=>"03", "last_activity(5i)"=>"45", "email"=>"test@gmail.com", "UDID"=>"bla"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.6ms)[0m  INSERT INTO "users" ("UDID", "created_at", "email", "first_name", "joined", "last_activity", "last_name", "password", "phone_number", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["UDID", "bla"], ["created_at", "2014-07-10 03:45:14.215372"], ["email", "test@gmail.com"], ["first_name", "david"], ["joined", "2014-07-10 03:45:00.000000"], ["last_activity", "2014-07-10 03:45:00.000000"], ["last_name", "mandy"], ["password", "test"], ["phone_number", "9177637884"], ["updated_at", "2014-07-10 03:45:14.215372"]]
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 21ms
+
+NoMethodError (undefined method `token=' for #<AuthKey:0x007fdf84579b10>):
+  app/models/auth_key.rb:10:in `generate_token'
+  app/models/user.rb:28:in `create_auth_key'
+  app/controllers/users_controller.rb:32:in `block in create'
+  app/controllers/users_controller.rb:31:in `create'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.1ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "auth_keys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "auth_key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created" datetime, "last_activity" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "likes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "photo_id" integer, "user_id" integer, "time" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "group_id" integer, "owner" boolean, "joined" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "roll_call_id" integer, "time" datetime, "location" text, "created_at" datetime, "updated_at" datetime, "picture_file_name" varchar(255), "picture_content_type" varchar(255), "picture_file_size" integer, "picture_updated_at" datetime) [0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "roll_calls" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "started" datetime, "ended" datetime, "duration" integer, "description" text, "group_id" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "phone_number" varchar(255), "password" varchar(255), "first_name" varchar(255), "last_name" varchar(255), "joined" datetime, "last_activity" datetime, "email" varchar(255), "UDID" varchar(255), "created_at" datetime, "updated_at" datetime, "avatar_file_name" varchar(255), "avatar_content_type" varchar(255), "avatar_file_size" integer, "avatar_updated_at" datetime, "auth_key" varchar(255), "expiration" datetime) [0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140710033618')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140709034042')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140709034641')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140709034700')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140709035226')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140709035355')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140709035415')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140709041434')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140709041513')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started POST "/users" for 127.0.0.1 at 2014-07-09 23:47:34 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DpSj/Yva+gNtiWMWJroxO4rYapl78fz6+NgyE+bxRHU=", "user"=>{"phone_number"=>"9177637884", "password"=>"[FILTERED]", "first_name"=>"david", "last_name"=>"mandy", "joined(1i)"=>"2014", "joined(2i)"=>"7", "joined(3i)"=>"10", "joined(4i)"=>"03", "joined(5i)"=>"45", "last_activity(1i)"=>"2014", "last_activity(2i)"=>"7", "last_activity(3i)"=>"10", "last_activity(4i)"=>"03", "last_activity(5i)"=>"45", "email"=>"test@gmail.com", "UDID"=>"bla"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("UDID", "created_at", "email", "first_name", "joined", "last_activity", "last_name", "password", "phone_number", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["UDID", "bla"], ["created_at", "2014-07-10 03:47:34.286693"], ["email", "test@gmail.com"], ["first_name", "david"], ["joined", "2014-07-10 03:45:00.000000"], ["last_activity", "2014-07-10 03:45:00.000000"], ["last_name", "mandy"], ["password", "test"], ["phone_number", "9177637884"], ["updated_at", "2014-07-10 03:47:34.286693"]]
+  [1m[35m (0.4ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 7ms
+
+NoMethodError (undefined method `token=' for #<AuthKey:0x007fdf83bedc40>):
+  app/models/auth_key.rb:10:in `generate_token'
+  app/models/user.rb:28:in `create_auth_key'
+  app/controllers/users_controller.rb:32:in `block in create'
+  app/controllers/users_controller.rb:31:in `create'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.3ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "auth_keys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "auth_key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created" datetime, "last_activity" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "likes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "photo_id" integer, "user_id" integer, "time" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "group_id" integer, "owner" boolean, "joined" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "roll_call_id" integer, "time" datetime, "location" text, "created_at" datetime, "updated_at" datetime, "picture_file_name" varchar(255), "picture_content_type" varchar(255), "picture_file_size" integer, "picture_updated_at" datetime) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "roll_calls" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "started" datetime, "ended" datetime, "duration" integer, "description" text, "group_id" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "phone_number" varchar(255), "password" varchar(255), "first_name" varchar(255), "last_name" varchar(255), "joined" datetime, "last_activity" datetime, "email" varchar(255), "UDID" varchar(255), "created_at" datetime, "updated_at" datetime, "avatar_file_name" varchar(255), "avatar_content_type" varchar(255), "avatar_file_size" integer, "avatar_updated_at" datetime, "auth_key" varchar(255), "expiration" datetime) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140710033618')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140709034042')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140709034641')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140709034700')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140709035226')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140709035355')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140709035415')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140709041434')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140709041513')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started POST "/users" for 127.0.0.1 at 2014-07-09 23:50:38 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DpSj/Yva+gNtiWMWJroxO4rYapl78fz6+NgyE+bxRHU=", "user"=>{"phone_number"=>"9177637884", "password"=>"[FILTERED]", "first_name"=>"david", "last_name"=>"mandy", "joined(1i)"=>"2014", "joined(2i)"=>"7", "joined(3i)"=>"10", "joined(4i)"=>"03", "joined(5i)"=>"45", "last_activity(1i)"=>"2014", "last_activity(2i)"=>"7", "last_activity(3i)"=>"10", "last_activity(4i)"=>"03", "last_activity(5i)"=>"45", "email"=>"test@gmail.com", "UDID"=>"bla"}, "commit"=>"Create User"}
+  [1m[35mAuthKey Load (0.4ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" IS NULL LIMIT 1
+Filter chain halted as :restrict_access rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-07-09 23:50:42 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DpSj/Yva+gNtiWMWJroxO4rYapl78fz6+NgyE+bxRHU=", "user"=>{"phone_number"=>"9177637884", "password"=>"[FILTERED]", "first_name"=>"david", "last_name"=>"mandy", "joined(1i)"=>"2014", "joined(2i)"=>"7", "joined(3i)"=>"10", "joined(4i)"=>"03", "joined(5i)"=>"45", "last_activity(1i)"=>"2014", "last_activity(2i)"=>"7", "last_activity(3i)"=>"10", "last_activity(4i)"=>"03", "last_activity(5i)"=>"45", "email"=>"test@gmail.com", "UDID"=>"bla"}, "commit"=>"Create User"}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" IS NULL LIMIT 1[0m
+Filter chain halted as :restrict_access rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"   ORDER BY "auth_keys"."id" ASC LIMIT 1[0m
+
+
+Started POST "/users" for 127.0.0.1 at 2014-07-09 23:51:28 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DpSj/Yva+gNtiWMWJroxO4rYapl78fz6+NgyE+bxRHU=", "user"=>{"phone_number"=>"9177637884", "password"=>"[FILTERED]", "first_name"=>"david", "last_name"=>"mandy", "joined(1i)"=>"2014", "joined(2i)"=>"7", "joined(3i)"=>"10", "joined(4i)"=>"03", "joined(5i)"=>"45", "last_activity(1i)"=>"2014", "last_activity(2i)"=>"7", "last_activity(3i)"=>"10", "last_activity(4i)"=>"03", "last_activity(5i)"=>"45", "email"=>"test@gmail.com", "UDID"=>"bla"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("UDID", "created_at", "email", "first_name", "joined", "last_activity", "last_name", "password", "phone_number", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["UDID", "bla"], ["created_at", "2014-07-10 03:51:28.325530"], ["email", "test@gmail.com"], ["first_name", "david"], ["joined", "2014-07-10 03:45:00.000000"], ["last_activity", "2014-07-10 03:45:00.000000"], ["last_name", "mandy"], ["password", "test"], ["phone_number", "9177637884"], ["updated_at", "2014-07-10 03:51:28.325530"]]
+  [1m[35m (0.4ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 34ms
+
+NameError (undefined local variable or method `token' for #<AuthKey:0x007fdf8553aa90>):
+  app/models/auth_key.rb:11:in `generate_token'
+  app/models/user.rb:28:in `create_auth_key'
+  app/controllers/users_controller.rb:32:in `block in create'
+  app/controllers/users_controller.rb:31:in `create'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-07-09 23:53:24 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DpSj/Yva+gNtiWMWJroxO4rYapl78fz6+NgyE+bxRHU=", "user"=>{"phone_number"=>"9177637884", "password"=>"[FILTERED]", "first_name"=>"david", "last_name"=>"mandy", "joined(1i)"=>"2014", "joined(2i)"=>"7", "joined(3i)"=>"10", "joined(4i)"=>"03", "joined(5i)"=>"45", "last_activity(1i)"=>"2014", "last_activity(2i)"=>"7", "last_activity(3i)"=>"10", "last_activity(4i)"=>"03", "last_activity(5i)"=>"45", "email"=>"test@gmail.com", "UDID"=>"bla"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("UDID", "created_at", "email", "first_name", "joined", "last_activity", "last_name", "password", "phone_number", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["UDID", "bla"], ["created_at", "2014-07-10 03:53:24.652476"], ["email", "test@gmail.com"], ["first_name", "david"], ["joined", "2014-07-10 03:45:00.000000"], ["last_activity", "2014-07-10 03:45:00.000000"], ["last_name", "mandy"], ["password", "test"], ["phone_number", "9177637884"], ["updated_at", "2014-07-10 03:53:24.652476"]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 29ms
+
+NameError (undefined local variable or method `token' for #<AuthKey:0x007fdf845db478>):
+  app/models/auth_key.rb:11:in `generate_token'
+  app/models/user.rb:28:in `create_auth_key'
+  app/controllers/users_controller.rb:32:in `block in create'
+  app/controllers/users_controller.rb:31:in `create'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-09 23:53:32 -0400
+Processing by UsersController#index as HTML
+  [1m[35mAuthKey Load (0.2ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" IS NULL LIMIT 1
+Filter chain halted as :restrict_access rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-09 23:53:38 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 16ms (Views: 9.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-09 23:53:39 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-09 23:54:14 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 14ms (Views: 8.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-09 23:54:32 -0400
+Processing by UsersController#index as */*
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 23ms (Views: 15.3ms | ActiveRecord: 0.4ms)
+
+
+
+
+Started POST "/users" for 127.0.0.1 at 2014-07-09 23:55:10 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"first_name"=>"david", "last_name"=>"mandelbaum", "user"=>{"first_name"=>"david", "last_name"=>"mandelbaum"}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-07-10 03:55:10.481783"], ["first_name", "david"], ["last_name", "mandelbaum"], ["updated_at", "2014-07-10 03:55:10.481783"]]
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 23ms
+
+NameError (undefined local variable or method `token' for #<AuthKey:0x007fdf853a76d8>):
+  app/models/auth_key.rb:11:in `generate_token'
+  app/models/user.rb:28:in `create_auth_key'
+  app/controllers/users_controller.rb:32:in `block in create'
+  app/controllers/users_controller.rb:31:in `create'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.8ms)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2014-07-09 23:55:19 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"first_name"=>"david", "last_name"=>"mandelbaum", "user"=>{"first_name"=>"david", "last_name"=>"mandelbaum"}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-07-10 03:55:19.863498"], ["first_name", "david"], ["last_name", "mandelbaum"], ["updated_at", "2014-07-10 03:55:19.863498"]]
+  [1m[35m (0.8ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 6ms
+
+NameError (undefined local variable or method `token' for #<AuthKey:0x007fdf83e82b40>):
+  app/models/auth_key.rb:11:in `generate_token'
+  app/models/user.rb:28:in `create_auth_key'
+  app/controllers/users_controller.rb:32:in `block in create'
+  app/controllers/users_controller.rb:31:in `create'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.5ms)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2014-07-09 23:56:20 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"first_name"=>"david", "last_name"=>"mandelbaum", "user"=>{"first_name"=>"david", "last_name"=>"mandelbaum"}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-07-10 03:56:21.056216"], ["first_name", "david"], ["last_name", "mandelbaum"], ["updated_at", "2014-07-10 03:56:21.056216"]]
+  [1m[36mAuthKey Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'f3565e107a5a4117190c69b038aa31ce' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["auth_key", "f3565e107a5a4117190c69b038aa31ce"], ["created_at", "2014-07-10 03:56:21.061188"], ["updated_at", "2014-07-10 03:56:21.061188"], ["user_id", 1]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  Rendered users/show.json.jbuilder (4.7ms)
+Completed 201 Created in 47ms (Views: 9.6ms | ActiveRecord: 2.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started POST "/users.json" for 127.0.0.1 at 2014-07-09 23:58:27 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"first_name"=>"david", "last_name"=>"mandelbaum", "user"=>{"first_name"=>"david", "last_name"=>"mandelbaum"}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-07-10 03:58:27.953495"], ["first_name", "david"], ["last_name", "mandelbaum"], ["updated_at", "2014-07-10 03:58:27.953495"]]
+  [1m[35mAuthKey Exists (0.1ms)[0m  SELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'de1de2ec9de3e18ec5315c253c886de8' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["auth_key", "de1de2ec9de3e18ec5315c253c886de8"], ["created_at", "2014-07-10 03:58:27.959346"], ["updated_at", "2014-07-10 03:58:27.959346"], ["user_id", 2]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  Rendered users/show.json.jbuilder (0.7ms)
+Completed 201 Created in 28ms (Views: 3.7ms | ActiveRecord: 2.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = 2
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started POST "/users.json" for 127.0.0.1 at 2014-07-09 23:59:33 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"first_name"=>"david", "last_name"=>"mandelbaum", "user"=>{"first_name"=>"david", "last_name"=>"mandelbaum"}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-07-10 03:59:33.998108"], ["first_name", "david"], ["last_name", "mandelbaum"], ["updated_at", "2014-07-10 03:59:33.998108"]]
+  [1m[36mAuthKey Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '5909b24bcb0f9945ec6641e27bda6291' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["auth_key", "5909b24bcb0f9945ec6641e27bda6291"], ["created_at", "2014-07-10 03:59:34.002757"], ["updated_at", "2014-07-10 03:59:34.002757"], ["user_id", 3]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 61ms
+
+NameError (undefined local variable or method `json' for #<UsersController:0x007fdf83302518>):
+  app/controllers/users_controller.rb:34:in `block (2 levels) in create'
+  app/controllers/users_controller.rb:31:in `create'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "users" WHERE "users"."id" = 3
+
+
+Started POST "/users.json" for 127.0.0.1 at 2014-07-10 00:00:31 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"first_name"=>"david", "last_name"=>"mandelbaum", "user"=>{"first_name"=>"david", "last_name"=>"mandelbaum"}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-07-10 04:00:31.888167"], ["first_name", "david"], ["last_name", "mandelbaum"], ["updated_at", "2014-07-10 04:00:31.888167"]]
+  [1m[35mAuthKey Exists (0.1ms)[0m  SELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '812ae982e8d4e64ffc3187067a7fd3ff' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["auth_key", "812ae982e8d4e64ffc3187067a7fd3ff"], ["created_at", "2014-07-10 04:00:31.893607"], ["updated_at", "2014-07-10 04:00:31.893607"], ["user_id", 4]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Completed 201 Created in 21ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2014-07-10 00:00:39 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.json.jbuilder (2.8ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2014-07-10 00:00:50 -0400
+Processing by UsersController#index as JSON
+  [1m[35mAuthKey Load (0.4ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" IS NULL LIMIT 1
+Filter chain halted as :restrict_access rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2014-07-10 00:01:33 -0400
+Processing by UsersController#index as JSON
+  Parameters: {"auth_key"=>"12ae982e8d4e64ffc3187067a7fd3ff", "user"=>{"auth_key"=>"12ae982e8d4e64ffc3187067a7fd3ff"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" IS NULL LIMIT 1[0m
+Filter chain halted as :restrict_access rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2014-07-10 00:01:44 -0400
+Processing by UsersController#index as JSON
+  Parameters: {"auth_key"=>"812ae982e8d4e64ffc3187067a7fd3ff", "user"=>{"auth_key"=>"812ae982e8d4e64ffc3187067a7fd3ff"}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" IS NULL LIMIT 1
+Filter chain halted as :restrict_access rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2014-07-10 00:02:01 -0400
+Processing by UsersController#index as JSON
+  Parameters: {"auth_key"=>"812ae982e8d4e64ffc3187067a7fd3ff", "user"=>{"auth_key"=>"812ae982e8d4e64ffc3187067a7fd3ff"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" IS NULL LIMIT 1[0m
+Filter chain halted as :restrict_access rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+  [1m[36mAuthKey Load (1.1ms)[0m  [1mSELECT "auth_keys".* FROM "auth_keys"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "users" WHERE "users"."id" = 4
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"   ORDER BY "auth_keys"."id" ASC LIMIT 1
+  [1m[36mSQL (1.1ms)[0m  [1mDELETE FROM "auth_keys" WHERE "auth_keys"."id" = 1[0m
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"   ORDER BY "auth_keys"."id" ASC LIMIT 1
+  [1m[36mSQL (1.2ms)[0m  [1mDELETE FROM "auth_keys" WHERE "auth_keys"."id" = 2[0m
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"   ORDER BY "auth_keys"."id" ASC LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "auth_keys" WHERE "auth_keys"."id" = 3[0m
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"   ORDER BY "auth_keys"."id" ASC LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "auth_keys" WHERE "auth_keys"."id" = 4[0m
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"   ORDER BY "auth_keys"."id" ASC LIMIT 1
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-10 00:03:48 -0400
+Processing by UsersController#index as HTML
+  [1m[35mAuthKey Load (0.3ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" IS NULL LIMIT 1
+Filter chain halted as :restrict_access rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2014-07-10 00:03:51 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"first_name"=>"david", "last_name"=>"mandelbaum", "user"=>{"first_name"=>"david", "last_name"=>"mandelbaum"}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-07-10 04:03:51.736415"], ["first_name", "david"], ["last_name", "mandelbaum"], ["updated_at", "2014-07-10 04:03:51.736415"]]
+  [1m[36mAuthKey Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '0bc3fcfd2a1cd2be530c90f7832d34bc' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["auth_key", "0bc3fcfd2a1cd2be530c90f7832d34bc"], ["created_at", "2014-07-10 04:03:51.741269"], ["updated_at", "2014-07-10 04:03:51.741269"], ["user_id", 5]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 22ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2014-07-10 00:04:06 -0400
+Processing by UsersController#index as JSON
+  Parameters: {"auth_key"=>"0bc3fcfd2a1cd2be530c90f7832d34bc", "user"=>{"auth_key"=>"0bc3fcfd2a1cd2be530c90f7832d34bc"}}
+  [1m[35mAuthKey Load (0.2ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" IS NULL LIMIT 1
+Filter chain halted as :restrict_access rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"   ORDER BY "auth_keys"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  DELETE FROM "users" WHERE "users"."id" = 5
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"   ORDER BY "auth_keys"."id" ASC LIMIT 1[0m
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"   ORDER BY "auth_keys"."id" ASC LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "auth_keys" WHERE "auth_keys"."id" = 5[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT "auth_keys".* FROM "auth_keys"[0m
+  [1m[36mAuthKey Load (1.7ms)[0m  [1mSELECT "auth_keys".* FROM "auth_keys"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+
+
+Started POST "/users.json" for 127.0.0.1 at 2014-07-10 00:08:44 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"first_name"=>"david", "last_name"=>"mandelbaum", "user"=>{"first_name"=>"david", "last_name"=>"mandelbaum"}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-07-10 04:08:44.852392"], ["first_name", "david"], ["last_name", "mandelbaum"], ["updated_at", "2014-07-10 04:08:44.852392"]]
+  [1m[36mAuthKey Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '6c02c285c75e441f41b1c802d4806e73' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["auth_key", "6c02c285c75e441f41b1c802d4806e73"], ["created_at", "2014-07-10 04:08:44.857885"], ["updated_at", "2014-07-10 04:08:44.857885"], ["user_id", 6]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 38ms
+
+NoMethodError (undefined method `auth_key' for nil:NilClass):
+  app/controllers/users_controller.rb:34:in `block (2 levels) in create'
+  app/controllers/users_controller.rb:31:in `create'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.1ms)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2014-07-10 00:09:39 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"first_name"=>"david", "last_name"=>"mandelbaum", "user"=>{"first_name"=>"david", "last_name"=>"mandelbaum"}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-07-10 04:09:39.443566"], ["first_name", "david"], ["last_name", "mandelbaum"], ["updated_at", "2014-07-10 04:09:39.443566"]]
+  [1m[35mAuthKey Exists (0.1ms)[0m  SELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'cc8ecebc31fc53a788d9a7d6740d681e' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["auth_key", "cc8ecebc31fc53a788d9a7d6740d681e"], ["created_at", "2014-07-10 04:09:39.448064"], ["updated_at", "2014-07-10 04:09:39.448064"], ["user_id", 7]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Completed 500 Internal Server Error in 28ms
+
+NoMethodError (undefined method `find_by_user' for #<Class:0x007fdf854d00a0>):
+  app/controllers/users_controller.rb:34:in `block (2 levels) in create'
+  app/controllers/users_controller.rb:31:in `create'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.6ms)
+  [1m[36mAuthKey Load (1.2ms)[0m  [1mSELECT "auth_keys".* FROM "auth_keys"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "users" WHERE "users"."id" = 6
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mSQL (1.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = 7
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"   ORDER BY "auth_keys"."id" ASC LIMIT 1
+  [1m[36mSQL (1.1ms)[0m  [1mDELETE FROM "auth_keys" WHERE "auth_keys"."id" = 6[0m
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"   ORDER BY "auth_keys"."id" ASC LIMIT 1
+  [1m[36mSQL (1.1ms)[0m  [1mDELETE FROM "auth_keys" WHERE "auth_keys"."id" = 7[0m
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"   ORDER BY "auth_keys"."id" ASC LIMIT 1
+
+
+Started POST "/users.json" for 127.0.0.1 at 2014-07-10 00:11:00 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"first_name"=>"david", "last_name"=>"mandelbaum", "user"=>{"first_name"=>"david", "last_name"=>"mandelbaum"}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-07-10 04:11:00.992614"], ["first_name", "david"], ["last_name", "mandelbaum"], ["updated_at", "2014-07-10 04:11:00.992614"]]
+  [1m[36mAuthKey Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '2c26088adf44c14aa65783fbbebff29b' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["auth_key", "2c26088adf44c14aa65783fbbebff29b"], ["created_at", "2014-07-10 04:11:00.996397"], ["updated_at", "2014-07-10 04:11:00.996397"], ["user_id", 8]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mAuthKey Load (0.2ms)[0m  SELECT "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 8
+Completed 201 Created in 21ms (Views: 0.8ms | ActiveRecord: 2.3ms)
+  [1m[36mAuthKey Load (0.2ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"   ORDER BY "auth_keys"."id" ASC LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  DELETE FROM "auth_keys" WHERE "auth_keys"."id" = 8
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mSQL (1.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = 8
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"   ORDER BY "auth_keys"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started POST "/users.json" for 127.0.0.1 at 2014-07-10 00:11:23 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"first_name"=>"david", "last_name"=>"mandelbaum", "user"=>{"first_name"=>"david", "last_name"=>"mandelbaum"}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-07-10 04:11:23.822760"], ["first_name", "david"], ["last_name", "mandelbaum"], ["updated_at", "2014-07-10 04:11:23.822760"]]
+  [1m[36mAuthKey Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'a87b82a12ed5d26b56cacdb486db325c' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["auth_key", "a87b82a12ed5d26b56cacdb486db325c"], ["created_at", "2014-07-10 04:11:23.826749"], ["updated_at", "2014-07-10 04:11:23.826749"], ["user_id", 9]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 9
+Completed 500 Internal Server Error in 25ms
+
+NoMethodError (undefined method `auth_key' for #<AuthKey::ActiveRecord_Relation:0x007fdf841cd2f0>):
+  app/controllers/users_controller.rb:34:in `block (2 levels) in create'
+  app/controllers/users_controller.rb:31:in `create'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.4ms)
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"   ORDER BY "auth_keys"."id" ASC LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  DELETE FROM "auth_keys" WHERE "auth_keys"."id" = 9
+  [1m[36mAuthKey Load (0.2ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"   ORDER BY "auth_keys"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mSQL (1.1ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = 9[0m
+
+
+Started POST "/users.json" for 127.0.0.1 at 2014-07-10 00:11:55 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"first_name"=>"david", "last_name"=>"mandelbaum", "user"=>{"first_name"=>"david", "last_name"=>"mandelbaum"}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-07-10 04:11:55.725171"], ["first_name", "david"], ["last_name", "mandelbaum"], ["updated_at", "2014-07-10 04:11:55.725171"]]
+  [1m[36mAuthKey Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'aeb62a0ac0f66168e1f1ed7ce30ae4d2' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["auth_key", "aeb62a0ac0f66168e1f1ed7ce30ae4d2"], ["created_at", "2014-07-10 04:11:55.730673"], ["updated_at", "2014-07-10 04:11:55.730673"], ["user_id", 10]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mAuthKey Load (0.2ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 10  ORDER BY "auth_keys"."id" ASC LIMIT 1
+Completed 201 Created in 25ms (Views: 0.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2014-07-10 00:12:10 -0400
+Processing by UsersController#index as JSON
+  Parameters: {"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2", "user"=>{"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" IS NULL LIMIT 1[0m
+Filter chain halted as :restrict_access rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2014-07-10 00:12:36 -0400
+Processing by UsersController#index as JSON
+  Parameters: {"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2", "user"=>{"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2"}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'aeb62a0ac0f66168e1f1ed7ce30ae4d2' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.json.jbuilder (14.5ms)
+Completed 200 OK in 27ms (Views: 17.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2014-07-10 00:12:39 -0400
+Processing by UsersController#index as JSON
+  Parameters: {"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d1", "user"=>{"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d1"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'aeb62a0ac0f66168e1f1ed7ce30ae4d1' LIMIT 1[0m
+Filter chain halted as :restrict_access rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2014-07-10 00:12:42 -0400
+Processing by UsersController#index as JSON
+  Parameters: {"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2", "user"=>{"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2"}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'aeb62a0ac0f66168e1f1ed7ce30ae4d2' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.json.jbuilder (1.6ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2014-07-10 00:13:22 -0400
+Processing by UsersController#index as JSON
+  Parameters: {"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2", "user"=>{"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'aeb62a0ac0f66168e1f1ed7ce30ae4d2' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.json.jbuilder (8.0ms)
+Completed 200 OK in 19ms (Views: 10.4ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2014-07-10 00:13:35 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"first_name"=>"jared", "last_name"=>"mandelbaum", "user"=>{"first_name"=>"jared", "last_name"=>"mandelbaum"}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-07-10 04:13:35.507861"], ["first_name", "jared"], ["last_name", "mandelbaum"], ["updated_at", "2014-07-10 04:13:35.507861"]]
+  [1m[35mAuthKey Exists (0.1ms)[0m  SELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '3a184bd82c01e23076549abf32c7aa41' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["auth_key", "3a184bd82c01e23076549abf32c7aa41"], ["created_at", "2014-07-10 04:13:35.509226"], ["updated_at", "2014-07-10 04:13:35.509226"], ["user_id", 11]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mAuthKey Load (0.2ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 11  ORDER BY "auth_keys"."id" ASC LIMIT 1[0m
+Completed 201 Created in 12ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2014-07-10 00:13:37 -0400
+Processing by UsersController#index as JSON
+  Parameters: {"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2", "user"=>{"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2"}}
+  [1m[35mAuthKey Load (0.2ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'aeb62a0ac0f66168e1f1ed7ce30ae4d2' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.json.jbuilder (1.8ms)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/10" for 127.0.0.1 at 2014-07-10 00:13:48 -0400
+Processing by UsersController#show as JSON
+  Parameters: {"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2", "id"=>"10", "user"=>{"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'aeb62a0ac0f66168e1f1ed7ce30ae4d2' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+Completed 500 Internal Server Error in 3ms
+
+ArgumentError (too few arguments):
+  app/controllers/users_controller.rb:15:in `format'
+  app/controllers/users_controller.rb:15:in `show'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.5ms)
+
+
+Started GET "/users/10.json" for 127.0.0.1 at 2014-07-10 00:14:00 -0400
+Processing by UsersController#show as JSON
+  Parameters: {"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2", "id"=>"10", "user"=>{"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'aeb62a0ac0f66168e1f1ed7ce30ae4d2' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+Completed 500 Internal Server Error in 3ms
+
+ArgumentError (too few arguments):
+  app/controllers/users_controller.rb:15:in `format'
+  app/controllers/users_controller.rb:15:in `show'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.1ms)
+
+
+Started GET "/users/11.json" for 127.0.0.1 at 2014-07-10 00:14:04 -0400
+Processing by UsersController#show as JSON
+  Parameters: {"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2", "id"=>"11", "user"=>{"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'aeb62a0ac0f66168e1f1ed7ce30ae4d2' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+Completed 500 Internal Server Error in 2ms
+
+ArgumentError (too few arguments):
+  app/controllers/users_controller.rb:15:in `format'
+  app/controllers/users_controller.rb:15:in `show'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.7ms)
+
+
+Started GET "/users/11.json" for 127.0.0.1 at 2014-07-10 00:14:36 -0400
+Processing by UsersController#show as JSON
+  Parameters: {"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2", "id"=>"11", "user"=>{"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'aeb62a0ac0f66168e1f1ed7ce30ae4d2' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+Completed 500 Internal Server Error in 5ms
+
+ArgumentError (too few arguments):
+  app/controllers/users_controller.rb:15:in `format'
+  app/controllers/users_controller.rb:15:in `show'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.8ms)
+
+
+Started GET "/users/11.json" for 127.0.0.1 at 2014-07-10 00:15:14 -0400
+Processing by UsersController#show as JSON
+  Parameters: {"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2", "id"=>"11", "user"=>{"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'aeb62a0ac0f66168e1f1ed7ce30ae4d2' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+Completed 200 OK in 11ms (Views: 5.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/10.json" for 127.0.0.1 at 2014-07-10 00:15:19 -0400
+Processing by UsersController#show as JSON
+  Parameters: {"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2", "id"=>"10", "user"=>{"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'aeb62a0ac0f66168e1f1ed7ce30ae4d2' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/10.json" for 127.0.0.1 at 2014-07-10 00:15:39 -0400
+Processing by UsersController#show as JSON
+  Parameters: {"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2", "id"=>"10", "user"=>{"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'aeb62a0ac0f66168e1f1ed7ce30ae4d2' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  Rendered users/show.json.jbuilder (6.7ms)
+Completed 200 OK in 17ms (Views: 11.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/11.json" for 127.0.0.1 at 2014-07-10 00:15:45 -0400
+Processing by UsersController#show as JSON
+  Parameters: {"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2", "id"=>"11", "user"=>{"auth_key"=>"aeb62a0ac0f66168e1f1ed7ce30ae4d2"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'aeb62a0ac0f66168e1f1ed7ce30ae4d2' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  Rendered users/show.json.jbuilder (1.1ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-10 19:44:26 -0400
+Processing by UsersController#index as HTML
+  [1m[36mAuthKey Load (1.2ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" IS NULL LIMIT 1[0m
+Filter chain halted as :restrict_access rendered or redirected
+Completed 401 Unauthorized in 17ms (Views: 2.4ms | ActiveRecord: 1.2ms)
