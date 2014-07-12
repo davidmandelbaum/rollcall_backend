@@ -57,8 +57,9 @@ class GroupsController < ApplicationController
   # DELETE /groups/1.json
   def destroy
     @membership = Membership.find_by user: @current_user, group: @group
+    puts @membership.inspect
     respond_to do |format|
-      if @membership.owner
+      if @membership.owner == true
         @group.destroy
         format.json { render json: "Group destroyed." }
       else
