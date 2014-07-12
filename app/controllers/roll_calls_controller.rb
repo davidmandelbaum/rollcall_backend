@@ -1,6 +1,8 @@
 class RollCallsController < ApplicationController
   before_action :set_roll_call, only: [:show, :edit, :update, :destroy]
 
+  before_action :restrict_access
+
   # GET /roll_calls
   # GET /roll_calls.json
   def index

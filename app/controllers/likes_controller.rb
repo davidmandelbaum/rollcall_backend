@@ -1,6 +1,8 @@
 class LikesController < ApplicationController
   before_action :set_like, only: [:show, :edit, :update, :destroy]
 
+  before_action :restrict_access
+
   # GET /likes
   # GET /likes.json
   def index

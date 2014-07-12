@@ -1,6 +1,8 @@
 class MembershipsController < ApplicationController
   before_action :set_membership, only: [:show, :edit, :update, :destroy]
 
+  before_action :restrict_access
+
   # GET /memberships
   # GET /memberships.json
   def index

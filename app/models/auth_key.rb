@@ -3,8 +3,6 @@ class AuthKey < ActiveRecord::Base
 
   before_create :generate_token
 
-  private
-
   def generate_token
     begin
       self.auth_key = SecureRandom.hex.to_s

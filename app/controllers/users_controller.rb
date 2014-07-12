@@ -1,8 +1,24 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  before_action :restrict_access, except: [:create]
+  before_action :restrict_access, except: [:create, :login]
 
+  def login
+    @user = User.find_by phone_number: params[:phone_number]
+    respond_to do |format|
+      if params[:password] and @user and @user.password == params[:password]
+        @auth_key = AuthKey.where(user: @user).first
+        if @auth_key.updated_at < 10.seconds.ago
+          @auth_key.generate_token
+          @auth_key.save
+        end
+        format.json { render json: @auth_key.auth_key, status: :ok }
+      else
+        format.json { render json: "Invalid username/password", status: 401 }
+      end
+    end
+  end
+  
   # GET /users
   # GET /users.json
   def index

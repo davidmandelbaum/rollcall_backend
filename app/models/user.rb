@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   # Associations
   
+  has_many      :memberships, dependent: :delete_all
   has_many      :groups, through: :memberships
   has_many      :likes
   has_many      :selfies

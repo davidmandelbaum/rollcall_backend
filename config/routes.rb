@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'users#index'
 
+  get 'login' => 'users#login'
+
   resources :likes
 
   resources :photos

@@ -1,6 +1,8 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
 
+  before_action :restrict_access
+
   # GET /photos
   # GET /photos.json
   def index
