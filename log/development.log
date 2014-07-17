@@ -6281,3 +6281,16 @@ Can't verify CSRF token authenticity
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
   [1m[35mAuthKey Load (0.3ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 4  ORDER BY "auth_keys"."id" ASC LIMIT 1
 Completed 201 Created in 42ms (Views: 0.3ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2014-07-17 01:20:32 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#create as JSON
+  Parameters: {"first_name"=>"admin", "last_name"=>"user", "password"=>"[FILTERED]", "phone_number"=>"2125551010", "user"=>{"phone_number"=>"2125551010", "password"=>"[FILTERED]", "first_name"=>"admin", "last_name"=>"user"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "first_name", "last_name", "password", "phone_number", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-17 05:20:32.327977"], ["first_name", "admin"], ["last_name", "user"], ["password", "password"], ["phone_number", "2125551010"], ["updated_at", "2014-07-17 05:20:32.327977"]]
+  [1m[35mAuthKey Exists (0.2ms)[0m  SELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '5ef9cff855c9deace503c0d92546ed16' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["auth_key", "5ef9cff855c9deace503c0d92546ed16"], ["created_at", "2014-07-17 05:20:32.343100"], ["updated_at", "2014-07-17 05:20:32.343100"], ["user_id", 5]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 5  ORDER BY "auth_keys"."id" ASC LIMIT 1[0m
+Completed 201 Created in 61ms (Views: 0.1ms | ActiveRecord: 2.4ms)
