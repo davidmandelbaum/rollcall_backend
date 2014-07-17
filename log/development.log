@@ -6164,3 +6164,89 @@ Can't verify CSRF token authenticity
   [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
   Rendered groups/show.json.jbuilder (3.9ms)
 Completed 201 Created in 91ms (Views: 13.0ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-07-12 11:28:25 -0400
+Processing by UsersController#login as JSON
+  Parameters: {"phone_number"=>"9175794854", "password"=>"[FILTERED]", "user"=>{"phone_number"=>"9175794854", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."phone_number" = '9175794854' LIMIT 1
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 2  ORDER BY "auth_keys"."id" ASC LIMIT 1[0m
+  [1m[35mAuthKey Exists (0.1ms)[0m  SELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7d7a04db28510f6a04e49365bef37711' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "auth_keys" SET "auth_key" = ?, "updated_at" = ? WHERE "auth_keys"."id" = 2  [["auth_key", "7d7a04db28510f6a04e49365bef37711"], ["updated_at", "2014-07-12 15:28:25.444499"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/groups.json" for 127.0.0.1 at 2014-07-12 11:29:14 -0400
+Processing by GroupsController#create as JSON
+  Parameters: {"auth_key"=>"7d7a04db28510f6a04e49365bef37711", "name"=>"test JSON group", "users"=>["9177637884", "2127557510"], "group"=>{"name"=>"test JSON group"}}
+Can't verify CSRF token authenticity
+  [1m[35mAuthKey Load (0.2ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7d7a04db28510f6a04e49365bef37711' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."phone_number" = '9177637884' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."phone_number" = '2127557510' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "groups" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-07-12 15:29:14.175388"], ["name", "test JSON group"], ["updated_at", "2014-07-12 15:29:14.175388"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "memberships" ("created_at", "group_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", "2014-07-12 15:29:14.176486"], ["group_id", 17], ["updated_at", "2014-07-12 15:29:14.176486"], ["user_id", 1]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "memberships" ("created_at", "group_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-07-12 15:29:14.177291"], ["group_id", 17], ["updated_at", "2014-07-12 15:29:14.177291"], ["user_id", 3]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "memberships" ("created_at", "group_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", "2014-07-12 15:29:14.177965"], ["group_id", 17], ["updated_at", "2014-07-12 15:29:14.177965"], ["user_id", 2]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mMembership Load (0.1ms)[0m  SELECT  "memberships".* FROM "memberships"  WHERE "memberships"."group_id" = 17 AND "memberships"."user_id" = 2 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "memberships" SET "owner" = ?, "updated_at" = ? WHERE "memberships"."id" = 38  [["owner", "t"], ["updated_at", "2014-07-12 15:29:14.181091"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  Rendered groups/show.json.jbuilder (0.2ms)
+Completed 201 Created in 18ms (Views: 3.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/login?phone_number=9175794854&password=[FILTERED]" for 127.0.0.1 at 2014-07-12 11:32:16 -0400
+Processing by UsersController#login as */*
+  Parameters: {"phone_number"=>"9175794854", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."phone_number" = '9175794854' LIMIT 1
+  [1m[36mAuthKey Load (0.2ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 2  ORDER BY "auth_keys"."id" ASC LIMIT 1[0m
+  [1m[35mAuthKey Exists (0.3ms)[0m  SELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '8ddca9ffbc13d5834fa320f19d001f3a' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "auth_keys" SET "auth_key" = ?, "updated_at" = ? WHERE "auth_keys"."id" = 2  [["auth_key", "8ddca9ffbc13d5834fa320f19d001f3a"], ["updated_at", "2014-07-12 15:32:16.740971"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 38ms (Views: 0.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/groups.json?auth_key=8ddca9ffbc13d5834fa320f19d001f3a" for 127.0.0.1 at 2014-07-12 11:32:30 -0400
+Processing by GroupsController#index as JSON
+  Parameters: {"auth_key"=>"8ddca9ffbc13d5834fa320f19d001f3a"}
+  [1m[35mAuthKey Load (0.8ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '8ddca9ffbc13d5834fa320f19d001f3a' LIMIT 1
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups" INNER JOIN "memberships" ON "groups"."id" = "memberships"."group_id" WHERE "memberships"."user_id" = ?  [["user_id", 2]]
+  Rendered groups/index.json.jbuilder (5.8ms)
+Completed 200 OK in 29ms (Views: 8.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/groups.json?auth_key=8ddca9ffbc13d5834fa320f19d001f3a" for 127.0.0.1 at 2014-07-12 11:33:11 -0400
+Processing by GroupsController#index as JSON
+  Parameters: {"auth_key"=>"8ddca9ffbc13d5834fa320f19d001f3a"}
+  [1m[36mAuthKey Load (0.2ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '8ddca9ffbc13d5834fa320f19d001f3a' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" INNER JOIN "memberships" ON "groups"."id" = "memberships"."group_id" WHERE "memberships"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered groups/index.json.jbuilder (1.6ms)
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/groups.json?auth_key=8ddca9ffbc13d5834fa320f19d001f3a" for 127.0.0.1 at 2014-07-12 11:33:16 -0400
+Processing by GroupsController#index as JSON
+  Parameters: {"auth_key"=>"8ddca9ffbc13d5834fa320f19d001f3a"}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '8ddca9ffbc13d5834fa320f19d001f3a' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" INNER JOIN "memberships" ON "groups"."id" = "memberships"."group_id" WHERE "memberships"."user_id" = ?  [["user_id", 2]]
+  Rendered groups/index.json.jbuilder (1.5ms)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/groups.json?auth_key=8ddca9ffbc13d5834fa320f19d001f3a" for 127.0.0.1 at 2014-07-12 11:33:30 -0400
+Processing by GroupsController#index as JSON
+  Parameters: {"auth_key"=>"8ddca9ffbc13d5834fa320f19d001f3a"}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '8ddca9ffbc13d5834fa320f19d001f3a' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" INNER JOIN "memberships" ON "groups"."id" = "memberships"."group_id" WHERE "memberships"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered groups/index.json.jbuilder (1.6ms)
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.3ms)

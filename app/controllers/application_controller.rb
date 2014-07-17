@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
 
     authenticate_with_http_token do |token|
       @auth_key = AuthKey.find_by auth_key: token
-      if @auth_key.updated_at < 10.minutes.ago
+      if @auth_key.updated_at < 10.days.ago
         @auth_key = nil
       end
     end
@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
     return true if @auth_key
 
     @auth_key = AuthKey.find_by auth_key: params[:auth_key]
-    if @auth_key.updated_at < 10.minutes.ago
+    if @auth_key.updated_at < 10.days.ago
       @auth_key = nil
     end
   end
