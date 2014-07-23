@@ -23,9 +23,11 @@ class GroupsController < ApplicationController
   # POST /groups.json
   def create
     @group = Group.new(group_params)
-    params[:users].each do |number|
-      @user = User.find_by phone_number: number
-      @group.users << @user
+    if params[:user]
+      params[:users].each do |number|
+        @user = User.find_by phone_number: number
+        @group.users << @user
+      end
     end
     @group.users << @current_user
 
@@ -35,10 +37,8 @@ class GroupsController < ApplicationController
         @membership.owner = true
         @membership.save
 
-        format.html { redirect_to @group, notice: 'Group was successfully created.' }
         format.json { render :show, status: :created, location: @group }
       else
-        format.html { render :new }
         format.json { render json: @group.errors, status: :unprocessable_entity }
       end
     end
@@ -49,10 +49,8 @@ class GroupsController < ApplicationController
   def update
     respond_to do |format|
       if @group.update(group_params)
-        format.html { redirect_to @group, notice: 'Group was successfully updated.' }
         format.json { render :show, status: :ok, location: @group }
       else
-        format.html { render :edit }
         format.json { render json: @group.errors, status: :unprocessable_entity }
       end
     end

@@ -30,10 +30,8 @@ class RollCallsController < ApplicationController
 
     respond_to do |format|
       if @roll_call.save
-        format.html { redirect_to @roll_call, notice: 'Roll call was successfully created.' }
         format.json { render :show, status: :created, location: @roll_call }
       else
-        format.html { render :new }
         format.json { render json: @roll_call.errors, status: :unprocessable_entity }
       end
     end
@@ -44,10 +42,8 @@ class RollCallsController < ApplicationController
   def update
     respond_to do |format|
       if @roll_call.update(roll_call_params)
-        format.html { redirect_to @roll_call, notice: 'Roll call was successfully updated.' }
         format.json { render :show, status: :ok, location: @roll_call }
       else
-        format.html { render :edit }
         format.json { render json: @roll_call.errors, status: :unprocessable_entity }
       end
     end
@@ -58,7 +54,6 @@ class RollCallsController < ApplicationController
   def destroy
     @roll_call.destroy
     respond_to do |format|
-      format.html { redirect_to roll_calls_url, notice: 'Roll call was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
