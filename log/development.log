@@ -6294,3 +6294,40 @@ Processing by UsersController#create as JSON
   [1m[35m (0.6ms)[0m  commit transaction
   [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 5  ORDER BY "auth_keys"."id" ASC LIMIT 1[0m
 Completed 201 Created in 61ms (Views: 0.1ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2014-07-22 22:36:46 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#create as JSON
+  Parameters: {"phone_number"=>"9177637884", "password"=>"[FILTERED]", "user"=>{"phone_number"=>"9177637884", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "users" ("created_at", "password", "phone_number", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-07-23 02:36:46.718379"], ["password", "password"], ["phone_number", "9177637884"], ["updated_at", "2014-07-23 02:36:46.718379"]]
+  [1m[35mAuthKey Exists (0.4ms)[0m  SELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'e34a4157440349019171cafc6f121533' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["auth_key", "e34a4157440349019171cafc6f121533"], ["created_at", "2014-07-23 02:36:46.733212"], ["updated_at", "2014-07-23 02:36:46.733212"], ["user_id", 6]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36mAuthKey Load (0.2ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 6  ORDER BY "auth_keys"."id" ASC LIMIT 1[0m
+Completed 201 Created in 57ms (Views: 0.1ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2014-07-22 22:38:38 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"phone_number"=>"9177637884", "password"=>"[FILTERED]", "user"=>{"phone_number"=>"9177637884", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "password", "phone_number", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-07-23 02:38:38.811631"], ["password", "password"], ["phone_number", "9177637884"], ["updated_at", "2014-07-23 02:38:38.811631"]]
+  [1m[35mAuthKey Exists (0.1ms)[0m  SELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '91b77e78b1da15a18e59cac4e62e0fb2' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["auth_key", "91b77e78b1da15a18e59cac4e62e0fb2"], ["created_at", "2014-07-23 02:38:38.815199"], ["updated_at", "2014-07-23 02:38:38.815199"], ["user_id", 7]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 7  ORDER BY "auth_keys"."id" ASC LIMIT 1[0m
+Completed 201 Created in 18ms (Views: 0.1ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2014-07-22 22:38:59 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"phone_number"=>"9177637884", "password"=>"[FILTERED]", "user"=>{"phone_number"=>"9177637884", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "password", "phone_number", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-07-23 02:39:00.047188"], ["password", "password"], ["phone_number", "9177637884"], ["updated_at", "2014-07-23 02:39:00.047188"]]
+  [1m[35mAuthKey Exists (0.1ms)[0m  SELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'ee8f00227e2413c6545d955c33b96de7' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["auth_key", "ee8f00227e2413c6545d955c33b96de7"], ["created_at", "2014-07-23 02:39:00.050893"], ["updated_at", "2014-07-23 02:39:00.050893"], ["user_id", 8]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 8  ORDER BY "auth_keys"."id" ASC LIMIT 1[0m
+Completed 201 Created in 18ms (Views: 0.6ms | ActiveRecord: 2.6ms)

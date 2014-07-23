@@ -12,7 +12,7 @@ class UsersController < ApplicationController
           @auth_key.generate_token
           @auth_key.save
         end
-        format.json { render json: @auth_key.auth_key, status: :ok }
+        format.json { render json: @auth_key, status: :ok }
       else
         format.json { render json: "Invalid username/password", status: 401 }
       end
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.'}
-        format.json { render json: AuthKey.where(user: @user).first.auth_key, status: :created }
+        format.json { render json: AuthKey.where(user: @user).first, status: :created }
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }

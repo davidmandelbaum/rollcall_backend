@@ -9,6 +9,11 @@ class GroupsController < ApplicationController
     @groups = @current_user.groups
   end
 
+  # GET /groups/1
+  # GET /groups/1.json
+  def show
+  end
+
   # GET /groups/new
   def new
     @group = Group.new
