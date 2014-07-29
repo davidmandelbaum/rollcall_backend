@@ -6423,3 +6423,477 @@ Processing by GroupsController#create as JSON
   [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
   Rendered groups/show.json.jbuilder (1.9ms)
 Completed 201 Created in 37ms (Views: 5.2ms | ActiveRecord: 4.1ms)
+  [1m[36mUser Load (3.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mGroup Load (0.4ms)[0m  SELECT "groups".* FROM "groups"
+  [1m[36mMembership Load (0.4ms)[0m  [1mSELECT "memberships".* FROM "memberships"[0m
+  [1m[35mSQL (4.9ms)[0m  DELETE FROM "groups"
+  [1m[36mSQL (1.2ms)[0m  [1mDELETE FROM "memberships"[0m
+  [1m[35mSQL (1.5ms)[0m  DELETE FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "password", "phone_number", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-07-29 02:53:03.533363"], ["password", "password"], ["phone_number", "9177637884"], ["updated_at", "2014-07-29 02:53:03.533363"]]
+  [1m[36mAuthKey Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'c93fced6dce31178cf582c925cbb3bae' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["auth_key", "c93fced6dce31178cf582c925cbb3bae"], ["created_at", "2014-07-29 02:53:03.547027"], ["updated_at", "2014-07-29 02:53:03.547027"], ["user_id", 9]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/groups" for 127.0.0.1 at 2014-07-28 22:53:28 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GroupsController#index as JSON
+  Parameters: {"auth_key"=>"c93fced6dce31178cf582c925cbb3bae\n", "group"=>{}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'c93fced6dce31178cf582c925cbb3bae
+' LIMIT 1
+Completed 500 Internal Server Error in 14ms
+
+NoMethodError (undefined method `updated_at' for nil:NilClass):
+  app/controllers/application_controller.rb:35:in `restrict_access_by_params'
+  app/controllers/application_controller.rb:12:in `restrict_access'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.2ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2014-07-28 22:54:34 -0400
+Processing by GroupsController#index as JSON
+  Parameters: {"auth_key"=>"c93fced6dce31178cf582c925cbb3bae\n", "group"=>{}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'c93fced6dce31178cf582c925cbb3bae
+' LIMIT 1[0m
+Completed 500 Internal Server Error in 3ms
+
+NoMethodError (undefined method `updated_at' for nil:NilClass):
+  app/controllers/application_controller.rb:35:in `restrict_access_by_params'
+  app/controllers/application_controller.rb:12:in `restrict_access'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.2ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2014-07-28 22:54:39 -0400
+Processing by GroupsController#index as JSON
+  Parameters: {"auth_key"=>"c93fced6dce31178cf582c925cbb3bae", "group"=>{}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'c93fced6dce31178cf582c925cbb3bae' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups" INNER JOIN "memberships" ON "groups"."id" = "memberships"."group_id" WHERE "memberships"."user_id" = ?  [["user_id", 9]]
+  Rendered groups/index.json.jbuilder (5.9ms)
+Completed 200 OK in 44ms (Views: 8.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/groups" for 127.0.0.1 at 2014-07-28 22:55:04 -0400
+Processing by GroupsController#create as JSON
+  Parameters: {"name"=>"test_group", "auth_key"=>"c93fced6dce31178cf582c925cbb3bae\n", "group"=>{"name"=>"test_group"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'c93fced6dce31178cf582c925cbb3bae
+' LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `updated_at' for nil:NilClass):
+  app/controllers/application_controller.rb:35:in `restrict_access_by_params'
+  app/controllers/application_controller.rb:12:in `restrict_access'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.0ms)
+
+
+Started POST "/groups" for 127.0.0.1 at 2014-07-28 22:55:06 -0400
+Processing by GroupsController#create as JSON
+  Parameters: {"name"=>"test_group", "auth_key"=>"c93fced6dce31178cf582c925cbb3bae", "group"=>{"name"=>"test_group"}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'c93fced6dce31178cf582c925cbb3bae' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "groups" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-07-29 02:55:06.936632"], ["name", "test_group"], ["updated_at", "2014-07-29 02:55:06.936632"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "memberships" ("created_at", "group_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", "2014-07-29 02:55:06.938216"], ["group_id", 21], ["updated_at", "2014-07-29 02:55:06.938216"], ["user_id", 9]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mMembership Load (0.1ms)[0m  SELECT  "memberships".* FROM "memberships"  WHERE "memberships"."group_id" = 21 AND "memberships"."user_id" = 9 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "memberships" SET "owner" = ?, "updated_at" = ? WHERE "memberships"."id" = 42  [["owner", "t"], ["updated_at", "2014-07-29 02:55:06.941777"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  Rendered groups/show.json.jbuilder (0.5ms)
+Completed 201 Created in 31ms (Views: 3.4ms | ActiveRecord: 3.1ms)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "password", "phone_number", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-07-29 02:55:29.557154"], ["password", "password"], ["phone_number", "9175794854"], ["updated_at", "2014-07-29 02:55:29.557154"]]
+  [1m[35mAuthKey Exists (0.1ms)[0m  SELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["auth_key", "39b447063cfe98361fd1c908dcf865dd"], ["created_at", "2014-07-29 02:55:29.558605"], ["updated_at", "2014-07-29 02:55:29.558605"], ["user_id", 10]]
+  [1m[35m (1.4ms)[0m  commit transaction
+
+
+Started GET "/groups" for 127.0.0.1 at 2014-07-28 22:55:43 -0400
+Processing by GroupsController#index as JSON
+  Parameters: {"auth_key"=>"39b447063cfe98361fd1c908dcf865dd", "group"=>{}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" INNER JOIN "memberships" ON "groups"."id" = "memberships"."group_id" WHERE "memberships"."user_id" = ?  [["user_id", 10]]
+  Rendered groups/index.json.jbuilder (0.5ms)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 22:55:48 -0400
+Processing by GroupsController#show as JSON
+  Parameters: {"auth_key"=>"39b447063cfe98361fd1c908dcf865dd", "id"=>"21", "group"=>{}}
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `user' for #<Group:0x007fa3b7011398>):
+  app/controllers/groups_controller.rb:15:in `show'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.1ms)
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 22:57:10 -0400
+Processing by GroupsController#show as JSON
+  Parameters: {"auth_key"=>"39b447063cfe98361fd1c908dcf865dd", "id"=>"21", "group"=>{}}
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ? AND "users"."id" = 10 LIMIT 1[0m  [["group_id", 21]]
+  Rendered groups/show.json.jbuilder (2.4ms)
+Completed 200 OK in 21ms (Views: 4.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 22:57:47 -0400
+Processing by GroupsController#show as JSON
+  Parameters: {"auth_key"=>"39b447063cfe98361fd1c908dcf865dd", "id"=>"21", "group"=>{}}
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ? AND "users"."id" = 10 LIMIT 1[0m  [["group_id", 21]]
+  Rendered groups/show.json.jbuilder (2.8ms)
+Completed 200 OK in 25ms (Views: 6.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2014-07-28 22:58:10 -0400
+Processing by GroupsController#index as JSON
+  Parameters: {"auth_key"=>"39b447063cfe98361fd1c908dcf865dd", "group"=>{}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" INNER JOIN "memberships" ON "groups"."id" = "memberships"."group_id" WHERE "memberships"."user_id" = ?  [["user_id", 10]]
+  Rendered groups/index.json.jbuilder (0.6ms)
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 22:58:13 -0400
+Processing by GroupsController#show as JSON
+  Parameters: {"auth_key"=>"39b447063cfe98361fd1c908dcf865dd", "id"=>"21", "group"=>{}}
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ? AND "users"."id" = 10 LIMIT 1  [["group_id", 21]]
+  Rendered groups/show.json.jbuilder (0.3ms)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 22:58:36 -0400
+Processing by GroupsController#show as JSON
+  Parameters: {"auth_key"=>"39b447063cfe98361fd1c908dcf865dd", "id"=>"21", "group"=>{}}
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ? AND "users"."id" = 10 LIMIT 1  [["group_id", 21]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ?[0m  [["group_id", 21]]
+  Rendered groups/show.json.jbuilder (2.2ms)
+Completed 200 OK in 27ms (Views: 4.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 22:59:33 -0400
+Processing by GroupsController#show as JSON
+  Parameters: {"auth_key"=>"39b447063cfe98361fd1c908dcf865dd", "id"=>"21", "group"=>{}}
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ? AND "users"."id" = 10 LIMIT 1[0m  [["group_id", 21]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ?  [["group_id", 21]]
+  Rendered groups/show.json.jbuilder (0.3ms)
+Completed 200 OK in 26ms (Views: 2.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 22:59:50 -0400
+Processing by GroupsController#show as JSON
+  Parameters: {"auth_key"=>"39b447063cfe98361fd1c908dcf865dd", "id"=>"21", "group"=>{}}
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+Completed 500 Internal Server Error in 21ms
+
+TypeError (no implicit conversion of Group into String):
+  app/controllers/groups_controller.rb:15:in `+'
+  app/controllers/groups_controller.rb:15:in `show'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.2ms)
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 23:00:10 -0400
+Processing by GroupsController#show as JSON
+  Parameters: {"auth_key"=>"39b447063cfe98361fd1c908dcf865dd", "id"=>"21", "group"=>{}}
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ? AND "users"."id" = 10 LIMIT 1[0m  [["group_id", 21]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ?  [["group_id", 21]]
+  Rendered groups/show.json.jbuilder (2.0ms)
+Completed 200 OK in 26ms (Views: 4.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 23:00:56 -0400
+Processing by GroupsController#show as JSON
+  Parameters: {"auth_key"=>"39b447063cfe98361fd1c908dcf865dd", "id"=>"21", "group"=>{}}
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ? AND "users"."id" = 10 LIMIT 1  [["group_id", 21]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ?[0m  [["group_id", 21]]
+  Rendered groups/show.json.jbuilder (2.1ms)
+Completed 200 OK in 26ms (Views: 4.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 23:01:30 -0400
+Processing by GroupsController#show as JSON
+  Parameters: {"auth_key"=>"39b447063cfe98361fd1c908dcf865dd", "id"=>"21", "group"=>{}}
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ? AND "users"."id" = 10 LIMIT 1[0m  [["group_id", 21]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ?  [["group_id", 21]]
+  Rendered groups/show.json.jbuilder (2.3ms)
+Completed 200 OK in 27ms (Views: 4.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 23:01:37 -0400
+Processing by GroupsController#show as JSON
+  Parameters: {"auth_key"=>"39b447063cfe98361fd1c908dcf865dd", "id"=>"21", "group"=>{}}
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ? AND "users"."id" = 10 LIMIT 1  [["group_id", 21]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ?[0m  [["group_id", 21]]
+  Rendered groups/show.json.jbuilder (2.2ms)
+Completed 200 OK in 28ms (Views: 4.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 23:01:50 -0400
+Processing by GroupsController#show as JSON
+  Parameters: {"auth_key"=>"39b447063cfe98361fd1c908dcf865dd", "id"=>"21", "group"=>{}}
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ? AND "users"."id" = 10 LIMIT 1[0m  [["group_id", 21]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ?  [["group_id", 21]]
+  Rendered groups/show.json.jbuilder (2.1ms)
+Completed 200 OK in 31ms (Views: 4.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 23:02:03 -0400
+Processing by GroupsController#show as JSON
+  Parameters: {"auth_key"=>"39b447063cfe98361fd1c908dcf865dd", "id"=>"21", "group"=>{}}
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ? AND "users"."id" = 10 LIMIT 1  [["group_id", 21]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ?[0m  [["group_id", 21]]
+  Rendered groups/show.json.jbuilder (2.2ms)
+Completed 200 OK in 27ms (Views: 4.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 23:02:16 -0400
+Processing by GroupsController#show as JSON
+  Parameters: {"auth_key"=>"39b447063cfe98361fd1c908dcf865dd", "id"=>"21", "group"=>{}}
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ? AND "users"."id" = 10 LIMIT 1[0m  [["group_id", 21]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ?  [["group_id", 21]]
+  Rendered groups/show.json.jbuilder (2.3ms)
+Completed 200 OK in 23ms (Views: 4.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 23:05:36 -0400
+Processing by GroupsController#show as JSON
+  Parameters: {"auth_key"=>"39b447063cfe98361fd1c908dcf865dd", "id"=>"21", "group"=>{}}
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ? AND "users"."id" = 10 LIMIT 1  [["group_id", 21]]
+  Rendered groups/show.json.jbuilder (2.3ms)
+Completed 403 Forbidden in 21ms (Views: 4.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 23:05:58 -0400
+Processing by GroupsController#show as JSON
+  Parameters: {"auth_key"=>"39b447063cfe98361fd1c908dcf865dd", "id"=>"21", "group"=>{}}
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ? AND "users"."id" = 10 LIMIT 1  [["group_id", 21]]
+  Rendered groups/show.json.jbuilder (2.2ms)
+Completed 403 Forbidden in 27ms (Views: 4.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 23:08:57 -0400
+
+SyntaxError (/Users/david/rollcall_backend/app/controllers/groups_controller.rb:91: syntax error, unexpected end-of-input, expecting keyword_end):
+  activesupport (4.1.0) lib/active_support/dependencies.rb:443:in `load'
+  activesupport (4.1.0) lib/active_support/dependencies.rb:443:in `block in load_file'
+  activesupport (4.1.0) lib/active_support/dependencies.rb:633:in `new_constants_in'
+  activesupport (4.1.0) lib/active_support/dependencies.rb:442:in `load_file'
+  activesupport (4.1.0) lib/active_support/dependencies.rb:342:in `require_or_load'
+  activesupport (4.1.0) lib/active_support/dependencies.rb:480:in `load_missing_constant'
+  activesupport (4.1.0) lib/active_support/dependencies.rb:180:in `const_missing'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.0) lib/active_support/inflector/methods.rb:236:in `constantize'
+  activesupport (4.1.0) lib/active_support/dependencies.rb:552:in `get'
+  activesupport (4.1.0) lib/active_support/dependencies.rb:583:in `constantize'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/david/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/david/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/david/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.2ms)
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 23:09:11 -0400
+Processing by GroupsController#show as JSON
+  Parameters: {"auth_key"=>"39b447063cfe98361fd1c908dcf865dd", "id"=>"21", "group"=>{}}
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ? AND "users"."id" = 10 LIMIT 1  [["group_id", 21]]
+  Rendered groups/show.json.jbuilder (2.3ms)
+Completed 403 Forbidden in 22ms (Views: 4.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 23:11:09 -0400
+Processing by GroupsController#show as JSON
+  Parameters: {"auth_key"=>"39b447063cfe98361fd1c908dcf865dd", "id"=>"21", "group"=>{}}
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ? AND "users"."id" = 10 LIMIT 1  [["group_id", 21]]
+Completed 406 Not Acceptable in 17ms
+
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  app/controllers/groups_controller.rb:15:in `show'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.4ms)
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 23:11:34 -0400
+Processing by GroupsController#show as JSON
+  Parameters: {"auth_key"=>"39b447063cfe98361fd1c908dcf865dd", "id"=>"21", "group"=>{}}
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ? AND "users"."id" = 10 LIMIT 1  [["group_id", 21]]
+Completed 403 Forbidden in 17ms (ActiveRecord: 1.3ms)
+  [1m[36mAuthKey Load (1.5ms)[0m  [1mSELECT "auth_keys".* FROM "auth_keys"[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups"
+  [1m[36mMembership Load (0.2ms)[0m  [1mSELECT "memberships".* FROM "memberships"[0m
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 23:12:25 -0400
+Processing by GroupsController#show as JSON
+  Parameters: {"auth_key"=>"c93fced6dce31178cf582c925cbb3bae", "id"=>"21", "group"=>{}}
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'c93fced6dce31178cf582c925cbb3bae' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ? AND "users"."id" = 9 LIMIT 1  [["group_id", 21]]
+Completed 500 Internal Server Error in 5ms
+
+NoMethodError (undefined method `json' for #<GroupsController:0x007fa3b73f3b28>):
+  app/controllers/groups_controller.rb:17:in `show'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.9ms)
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 23:12:43 -0400
+Processing by GroupsController#show as JSON
+  Parameters: {"auth_key"=>"c93fced6dce31178cf582c925cbb3bae", "id"=>"21", "group"=>{}}
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'c93fced6dce31178cf582c925cbb3bae' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ? AND "users"."id" = 9 LIMIT 1  [["group_id", 21]]
+Completed 200 OK in 19ms (Views: 2.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/groups/21" for 127.0.0.1 at 2014-07-28 23:12:49 -0400
+Processing by GroupsController#show as JSON
+  Parameters: {"auth_key"=>"39b447063cfe98361fd1c908dcf865dd", "id"=>"21", "group"=>{}}
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '39b447063cfe98361fd1c908dcf865dd' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ? AND "users"."id" = 10 LIMIT 1  [["group_id", 21]]
+Completed 403 Forbidden in 3ms (ActiveRecord: 0.3ms)

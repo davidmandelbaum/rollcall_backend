@@ -12,6 +12,12 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
+    if @group.users.include? @current_user
+      puts "right user"
+      render json: @group
+    else
+      head :forbidden
+    end
   end
 
   # GET /groups/new
