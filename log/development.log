@@ -6922,3 +6922,285 @@ Processing by UsersController#login as JSON
   [1m[35mSQL (0.3ms)[0m  UPDATE "auth_keys" SET "auth_key" = ?, "updated_at" = ? WHERE "auth_keys"."id" = 9  [["auth_key", "b84430cf71ed95ffe64eafd0ff3e0c9e"], ["updated_at", "2014-08-04 04:04:15.616762"]]
   [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
 Completed 200 OK in 18ms (Views: 0.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-08-04 00:07:54 -0400
+Processing by UsersController#login as JSON
+  Parameters: {"phone_number"=>"9177637884", "password"=>"[FILTERED]", "user"=>{"phone_number"=>"9177637884", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."phone_number" = '9177637884' LIMIT 1
+  [1m[36mAuthKey Load (0.2ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 9  ORDER BY "auth_keys"."id" ASC LIMIT 1[0m
+  [1m[35mAuthKey Exists (0.1ms)[0m  SELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '051c07bda35628ce42e69834699452aa' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "auth_keys" SET "auth_key" = ?, "updated_at" = ? WHERE "auth_keys"."id" = 9  [["auth_key", "051c07bda35628ce42e69834699452aa"], ["updated_at", "2014-08-04 04:07:55.047747"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 19ms (Views: 0.6ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 00:08:21 -0400
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "roll_call"=>{"duration"=>"30"}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `updated_at' for nil:NilClass):
+  app/controllers/application_controller.rb:35:in `restrict_access_by_params'
+  app/controllers/application_controller.rb:12:in `restrict_access'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.1ms)
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 00:08:48 -0400
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "auth_key"=>"051c07bda35628ce42e69834699452aa\n", "roll_call"=>{"duration"=>"30"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '051c07bda35628ce42e69834699452aa
+' LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `updated_at' for nil:NilClass):
+  app/controllers/application_controller.rb:35:in `restrict_access_by_params'
+  app/controllers/application_controller.rb:12:in `restrict_access'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.1ms)
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 00:08:52 -0400
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "auth_key"=>"051c07bda35628ce42e69834699452aa", "roll_call"=>{"duration"=>"30"}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '051c07bda35628ce42e69834699452aa' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roll_calls" ("created_at", "duration", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-08-04 04:08:52.083823"], ["duration", 30], ["updated_at", "2014-08-04 04:08:52.083823"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  Rendered roll_calls/show.json.jbuilder (3.4ms)
+Completed 201 Created in 23ms (Views: 6.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/roll_calls" for 127.0.0.1 at 2014-08-04 00:11:01 -0400
+Processing by RollCallsController#index as JSON
+  Parameters: {"auth_key"=>"051c07bda35628ce42e69834699452aa", "roll_call"=>{}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '051c07bda35628ce42e69834699452aa' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" INNER JOIN "memberships" ON "groups"."id" = "memberships"."group_id" WHERE "memberships"."user_id" = ?[0m  [["user_id", 9]]
+Completed 500 Internal Server Error in 42ms
+
+NoMethodError (undefined method `roll_calls' for #<Group:0x007fb588ab4948>):
+  app/controllers/roll_calls_controller.rb:12:in `block in index'
+  app/controllers/roll_calls_controller.rb:11:in `index'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/roll_calls" for 127.0.0.1 at 2014-08-04 00:11:31 -0400
+Processing by RollCallsController#index as JSON
+  Parameters: {"auth_key"=>"051c07bda35628ce42e69834699452aa", "roll_call"=>{}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '051c07bda35628ce42e69834699452aa' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" INNER JOIN "memberships" ON "groups"."id" = "memberships"."group_id" WHERE "memberships"."user_id" = ?  [["user_id", 9]]
+  [1m[36mRollCall Load (0.2ms)[0m  [1mSELECT "roll_calls".* FROM "roll_calls"  WHERE "roll_calls"."group_id" = ?[0m  [["group_id", 21]]
+  Rendered roll_calls/index.json.jbuilder (2.0ms)
+Completed 500 Internal Server Error in 23ms
+
+ActionView::Template::Error (undefined method `id' for #<ActiveRecord::Associations::CollectionProxy []>):
+    1: json.array!(@roll_calls) do |roll_call|
+    2:   json.extract! roll_call, :id, :started, :ended, :duration, :description, :group_id, :user_id
+    3:   json.url roll_call_url(roll_call, format: :json)
+    4: end
+  app/views/roll_calls/index.json.jbuilder:2:in `block in _app_views_roll_calls_index_json_jbuilder___1757317671916347598_70208805905480'
+  app/views/roll_calls/index.json.jbuilder:1:in `_app_views_roll_calls_index_json_jbuilder___1757317671916347598_70208805905480'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.1ms)
+  [1m[36mSQL (2.8ms)[0m  [1mDELETE FROM "roll_calls"[0m
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups"
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 00:13:45 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "auth_key"=>"051c07bda35628ce42e69834699452aa", "group_id"=>"21", "roll_call"=>{"duration"=>"30", "group_id"=>"21"}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '051c07bda35628ce42e69834699452aa' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "roll_calls" ("created_at", "duration", "group_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-04 04:13:45.208208"], ["duration", 30], ["group_id", 21], ["updated_at", "2014-08-04 04:13:45.208208"], ["user_id", 9]]
+  [1m[35m (5.4ms)[0m  commit transaction
+  Rendered roll_calls/show.json.jbuilder (2.1ms)
+Completed 201 Created in 53ms (Views: 9.3ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/roll_calls" for 127.0.0.1 at 2014-08-04 00:14:02 -0400
+Processing by RollCallsController#index as JSON
+  Parameters: {"auth_key"=>"051c07bda35628ce42e69834699452aa", "roll_call"=>{}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '051c07bda35628ce42e69834699452aa' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" INNER JOIN "memberships" ON "groups"."id" = "memberships"."group_id" WHERE "memberships"."user_id" = ?[0m  [["user_id", 9]]
+  [1m[35mRollCall Load (0.1ms)[0m  SELECT "roll_calls".* FROM "roll_calls"  WHERE "roll_calls"."group_id" = ?  [["group_id", 21]]
+  Rendered roll_calls/index.json.jbuilder (4.4ms)
+Completed 500 Internal Server Error in 24ms
+
+ActionView::Template::Error (undefined method `id' for #<RollCall::ActiveRecord_Associations_CollectionProxy:0x007fbe5ad89828>):
+    1: json.array!(@roll_calls) do |roll_call|
+    2:   json.extract! roll_call, :id, :started, :ended, :duration, :description, :group_id, :user_id
+    3:   json.url roll_call_url(roll_call, format: :json)
+    4: end
+  app/views/roll_calls/index.json.jbuilder:2:in `block in _app_views_roll_calls_index_json_jbuilder___3397429357256850744_70227772410000'
+  app/views/roll_calls/index.json.jbuilder:1:in `_app_views_roll_calls_index_json_jbuilder___3397429357256850744_70227772410000'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.2ms)
+  [1m[36mRollCall Load (0.2ms)[0m  [1mSELECT "roll_calls".* FROM "roll_calls"[0m
+
+
+Started GET "/roll_calls/21" for 127.0.0.1 at 2014-08-04 00:15:28 -0400
+Processing by RollCallsController#show as JSON
+  Parameters: {"auth_key"=>"051c07bda35628ce42e69834699452aa", "id"=>"21", "roll_call"=>{}}
+  [1m[36mRollCall Load (0.4ms)[0m  [1mSELECT  "roll_calls".* FROM "roll_calls"  WHERE "roll_calls"."id" = ? LIMIT 1[0m  [["id", 21]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find RollCall with 'id'=21):
+  app/controllers/roll_calls_controller.rb:69:in `set_roll_call'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.0ms)
+
+
+Started GET "/roll_calls/2" for 127.0.0.1 at 2014-08-04 00:15:37 -0400
+Processing by RollCallsController#show as JSON
+  Parameters: {"auth_key"=>"051c07bda35628ce42e69834699452aa", "id"=>"2", "roll_call"=>{}}
+  [1m[35mRollCall Load (0.1ms)[0m  SELECT  "roll_calls".* FROM "roll_calls"  WHERE "roll_calls"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '051c07bda35628ce42e69834699452aa' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered roll_calls/show.json.jbuilder (0.3ms)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.2ms)
+  [1m[35mMembership Load (0.2ms)[0m  SELECT "memberships".* FROM "memberships"
+
+
+Started GET "/roll_calls" for 127.0.0.1 at 2014-08-04 00:16:14 -0400
+Processing by RollCallsController#index as JSON
+  Parameters: {"auth_key"=>"051c07bda35628ce42e69834699452aa", "roll_call"=>{}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '051c07bda35628ce42e69834699452aa' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" INNER JOIN "memberships" ON "groups"."id" = "memberships"."group_id" WHERE "memberships"."user_id" = ?[0m  [["user_id", 9]]
+  [1m[35mRollCall Load (0.1ms)[0m  SELECT "roll_calls".* FROM "roll_calls"  WHERE "roll_calls"."group_id" = ?  [["group_id", 21]]
+  Rendered roll_calls/index.json.jbuilder (1.6ms)
+Completed 500 Internal Server Error in 27ms
+
+ActionView::Template::Error (undefined method `id' for #<RollCall::ActiveRecord_Associations_CollectionProxy:0x007fbe5dcf1ed0>):
+    1: json.array!(@roll_calls) do |roll_call|
+    2:   json.extract! roll_call, :id, :started, :ended, :duration, :description, :group_id, :user_id
+    3:   json.url roll_call_url(roll_call, format: :json)
+    4: end
+  app/views/roll_calls/index.json.jbuilder:2:in `block in _app_views_roll_calls_index_json_jbuilder___3397429357256850744_70227772410000'
+  app/views/roll_calls/index.json.jbuilder:1:in `_app_views_roll_calls_index_json_jbuilder___3397429357256850744_70227772410000'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.5ms)
+
+
+Started GET "/roll_calls" for 127.0.0.1 at 2014-08-04 00:17:42 -0400
+Processing by RollCallsController#index as JSON
+  Parameters: {"auth_key"=>"051c07bda35628ce42e69834699452aa", "roll_call"=>{}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '051c07bda35628ce42e69834699452aa' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" INNER JOIN "memberships" ON "groups"."id" = "memberships"."group_id" WHERE "memberships"."user_id" = ?[0m  [["user_id", 9]]
+  [1m[35mRollCall Load (0.1ms)[0m  SELECT "roll_calls".* FROM "roll_calls"  WHERE "roll_calls"."group_id" = ?  [["group_id", 21]]
+  Rendered roll_calls/index.json.jbuilder (1.5ms)
+Completed 500 Internal Server Error in 24ms
+
+ActionView::Template::Error (undefined method `id' for #<RollCall::ActiveRecord_Associations_CollectionProxy:0x007fbe5a2baa50>):
+    1: json.array!(@roll_calls) do |roll_call|
+    2:   json.extract! roll_call, :id, :started, :ended, :duration, :description, :group_id, :user_id
+    3:   json.url roll_call_url(roll_call, format: :json)
+    4: end
+  app/views/roll_calls/index.json.jbuilder:2:in `block in _app_views_roll_calls_index_json_jbuilder___3397429357256850744_70227772410000'
+  app/views/roll_calls/index.json.jbuilder:1:in `_app_views_roll_calls_index_json_jbuilder___3397429357256850744_70227772410000'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.7ms)
+
+
+Started GET "/roll_calls" for 127.0.0.1 at 2014-08-04 00:18:15 -0400
+Processing by RollCallsController#index as JSON
+  Parameters: {"auth_key"=>"051c07bda35628ce42e69834699452aa", "roll_call"=>{}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '051c07bda35628ce42e69834699452aa' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" INNER JOIN "memberships" ON "groups"."id" = "memberships"."group_id" WHERE "memberships"."user_id" = ?[0m  [["user_id", 9]]
+Completed 500 Internal Server Error in 18ms
+
+NoMethodError (undefined method `roll_calls' for nil:NilClass):
+  app/controllers/roll_calls_controller.rb:12:in `block in index'
+  app/controllers/roll_calls_controller.rb:11:in `index'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.8ms)
+
+
+Started GET "/roll_calls" for 127.0.0.1 at 2014-08-04 00:18:57 -0400
+Processing by RollCallsController#index as JSON
+  Parameters: {"auth_key"=>"051c07bda35628ce42e69834699452aa", "roll_call"=>{}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '051c07bda35628ce42e69834699452aa' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" INNER JOIN "memberships" ON "groups"."id" = "memberships"."group_id" WHERE "memberships"."user_id" = ?  [["user_id", 9]]
+  [1m[36mRollCall Load (0.1ms)[0m  [1mSELECT "roll_calls".* FROM "roll_calls"  WHERE "roll_calls"."group_id" = ?[0m  [["group_id", 21]]
+  Rendered roll_calls/index.json.jbuilder (3.5ms)
+Completed 200 OK in 26ms (Views: 5.7ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 00:19:14 -0400
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "auth_key"=>"051c07bda35628ce42e69834699452aa", "group_id"=>"21", "roll_call"=>{"duration"=>"30", "group_id"=>"21"}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '051c07bda35628ce42e69834699452aa' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roll_calls" ("created_at", "duration", "group_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-04 04:19:14.196105"], ["duration", 30], ["group_id", 21], ["updated_at", "2014-08-04 04:19:14.196105"], ["user_id", 9]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  Rendered roll_calls/show.json.jbuilder (0.3ms)
+Completed 201 Created in 9ms (Views: 3.0ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 00:19:35 -0400
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "auth_key"=>"051c07bda35628ce42e69834699452aa", "group_id"=>"21", "roll_call"=>{"duration"=>"30", "group_id"=>"21"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '051c07bda35628ce42e69834699452aa' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "roll_calls" ("created_at", "duration", "group_id", "started", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-08-04 04:19:35.588696"], ["duration", 30], ["group_id", 21], ["started", "2014-08-04 04:19:35.588210"], ["updated_at", "2014-08-04 04:19:35.588696"], ["user_id", 9]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  Rendered roll_calls/show.json.jbuilder (0.2ms)
+Completed 201 Created in 21ms (Views: 2.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/roll_calls" for 127.0.0.1 at 2014-08-04 00:19:42 -0400
+Processing by RollCallsController#index as JSON
+  Parameters: {"auth_key"=>"051c07bda35628ce42e69834699452aa", "roll_call"=>{}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '051c07bda35628ce42e69834699452aa' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" INNER JOIN "memberships" ON "groups"."id" = "memberships"."group_id" WHERE "memberships"."user_id" = ?  [["user_id", 9]]
+  [1m[36mRollCall Load (0.1ms)[0m  [1mSELECT "roll_calls".* FROM "roll_calls"  WHERE "roll_calls"."group_id" = ?[0m  [["group_id", 21]]
+  Rendered roll_calls/index.json.jbuilder (0.8ms)
+Completed 200 OK in 14ms (Views: 3.0ms | ActiveRecord: 0.7ms)

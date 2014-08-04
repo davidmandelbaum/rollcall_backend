@@ -7,10 +7,14 @@ class UsersController < ApplicationController
     @user = User.find_by phone_number: params[:phone_number]
     respond_to do |format|
       if params[:password] and @user and @user.password == params[:password]
-        @auth_key = AuthKey.where(user: @user).first
-        if @auth_key.updated_at < 10.seconds.ago
-          @auth_key.generate_token
-          @auth_key.save
+        if @auth_key
+          @auth_key = AuthKey.where(user: @user).first
+          if @auth_key.updated_at < 10.seconds.ago
+            @auth_key.generate_token
+            @auth_key.save
+          end
+        else
+          format.json { render json: "Invalid username/password", status: 401 }
         end
         format.json { render json: { :auth_key => @auth_key, :user => @user }, status: :ok }
       else
@@ -46,7 +50,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.json { render json: AuthKey.where(user: @user).first, status: :created }
+        format.json { render json: { :auth_key => AuthKey.where(user: @user).first, :user => @user }, status: :created }
       else
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end

@@ -9,7 +9,9 @@ class RollCallsController < ApplicationController
     @groups = @current_user.groups
     @roll_calls = []
     @groups.each do |g|
-      @roll_calls << g.roll_calls
+      g.roll_calls.each do |r|
+        @roll_calls << r
+      end
     end
   end
 
@@ -31,6 +33,8 @@ class RollCallsController < ApplicationController
   # POST /roll_calls.json
   def create
     @roll_call = RollCall.new(roll_call_params)
+    @roll_call.user = @current_user
+    @roll_call.started = Time.now
 
     respond_to do |format|
       if @roll_call.save
