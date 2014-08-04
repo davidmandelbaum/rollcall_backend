@@ -6897,3 +6897,28 @@ Processing by GroupsController#show as JSON
   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
   [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "memberships" ON "users"."id" = "memberships"."user_id" WHERE "memberships"."group_id" = ? AND "users"."id" = 10 LIMIT 1  [["group_id", 21]]
 Completed 403 Forbidden in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-08-04 00:02:56 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#login as JSON
+  Parameters: {"phone_number"=>"9177637884", "password"=>"[FILTERED]", "user"=>{"phone_number"=>"9177637884", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."phone_number" = '9177637884' LIMIT 1
+  [1m[36mAuthKey Load (0.4ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 9  ORDER BY "auth_keys"."id" ASC LIMIT 1[0m
+  [1m[35mAuthKey Exists (0.2ms)[0m  SELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '4df5687ae11b0a3a7b703a196765428a' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "auth_keys" SET "auth_key" = ?, "updated_at" = ? WHERE "auth_keys"."id" = 9  [["auth_key", "4df5687ae11b0a3a7b703a196765428a"], ["updated_at", "2014-08-04 04:02:56.173406"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 53ms (Views: 0.9ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-08-04 00:04:15 -0400
+Processing by UsersController#login as JSON
+  Parameters: {"phone_number"=>"9177637884", "password"=>"[FILTERED]", "user"=>{"phone_number"=>"9177637884", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."phone_number" = '9177637884' LIMIT 1
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 9  ORDER BY "auth_keys"."id" ASC LIMIT 1[0m
+  [1m[35mAuthKey Exists (0.1ms)[0m  SELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'b84430cf71ed95ffe64eafd0ff3e0c9e' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "auth_keys" SET "auth_key" = ?, "updated_at" = ? WHERE "auth_keys"."id" = 9  [["auth_key", "b84430cf71ed95ffe64eafd0ff3e0c9e"], ["updated_at", "2014-08-04 04:04:15.616762"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 18ms (Views: 0.6ms | ActiveRecord: 2.5ms)

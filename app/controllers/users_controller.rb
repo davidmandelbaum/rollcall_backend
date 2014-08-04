@@ -12,7 +12,7 @@ class UsersController < ApplicationController
           @auth_key.generate_token
           @auth_key.save
         end
-        format.json { render json: @auth_key, status: :ok }
+        format.json { render json: { :auth_key => @auth_key, :user => @user }, status: :ok }
       else
         format.json { render json: "Invalid username/password", status: 401 }
       end

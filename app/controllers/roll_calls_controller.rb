@@ -6,7 +6,11 @@ class RollCallsController < ApplicationController
   # GET /roll_calls
   # GET /roll_calls.json
   def index
-    @roll_calls = RollCall.all
+    @groups = @current_user.groups
+    @roll_calls = []
+    @groups.each do |g|
+      @roll_calls << g.roll_calls
+    end
   end
 
   # GET /roll_calls/1
