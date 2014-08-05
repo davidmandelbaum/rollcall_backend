@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     @users = params[:users]
     @friends = []
     @users.each do |u|
-      if User.exists? :phone_number => u.to_int
+      if User.exists?(phone_number: u.to_int)
         @friends << u
       end
     end

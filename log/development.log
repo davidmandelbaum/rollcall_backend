@@ -7364,3 +7364,14 @@ Processing by UsersController#find_friends as JSON
   [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = 9175794854 LIMIT 1
   [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = 2127557510 LIMIT 1[0m
 Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/find_friends" for 127.0.0.1 at 2014-08-04 21:31:15 -0400
+Processing by UsersController#find_friends as JSON
+  Parameters: {"users"=>[9177637884, 9175794854, 2127557510], "auth_key"=>"06c8695c2858a908109bcb228f93a557", "user"=>{"auth_key"=>"06c8695c2858a908109bcb228f93a557"}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '06c8695c2858a908109bcb228f93a557' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = 9177637884 LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = 9175794854 LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = 2127557510 LIMIT 1
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 1.0ms)
