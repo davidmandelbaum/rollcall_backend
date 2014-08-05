@@ -7322,3 +7322,45 @@ Processing by UsersController#find_friends as JSON
   [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = 9175794854 LIMIT 1[0m
   [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = 2127557510 LIMIT 1
 Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/find_friends" for 127.0.0.1 at 2014-08-04 21:26:10 -0400
+Processing by UsersController#find_friends as JSON
+  Parameters: {"users"=>[9177637884, 9175794854, 2127557510], "auth_key"=>"06c8695c2858a908109bcb228f93a557", "user"=>{"auth_key"=>"06c8695c2858a908109bcb228f93a557"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '06c8695c2858a908109bcb228f93a557' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = 9177637884 LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = 9175794854 LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = 2127557510 LIMIT 1[0m
+Completed 500 Internal Server Error in 15ms
+
+NoMethodError (undefined method `users=' for {}:Hash):
+  app/controllers/users_controller.rb:31:in `find_friends'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.7ms)
+
+
+Started GET "/find_friends" for 127.0.0.1 at 2014-08-04 21:27:00 -0400
+Processing by UsersController#find_friends as JSON
+  Parameters: {"users"=>[9177637884, 9175794854, 2127557510], "auth_key"=>"06c8695c2858a908109bcb228f93a557", "user"=>{"auth_key"=>"06c8695c2858a908109bcb228f93a557"}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '06c8695c2858a908109bcb228f93a557' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = 9177637884 LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = 9175794854 LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = 2127557510 LIMIT 1
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/find_friends" for 127.0.0.1 at 2014-08-04 21:27:40 -0400
+Processing by UsersController#find_friends as JSON
+  Parameters: {"users"=>[9177637884, 9175794854, 2127557510], "auth_key"=>"06c8695c2858a908109bcb228f93a557", "user"=>{"auth_key"=>"06c8695c2858a908109bcb228f93a557"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '06c8695c2858a908109bcb228f93a557' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = 9177637884 LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = 9175794854 LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = 2127557510 LIMIT 1[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 1.2ms)

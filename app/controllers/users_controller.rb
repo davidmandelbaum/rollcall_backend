@@ -23,11 +23,11 @@ class UsersController < ApplicationController
     @users = params[:users]
     @friends = []
     @users.each do |u|
-      if User.exists? :phone_number => u
+      if User.exists? :phone_number => u.to_int
         @friends << u
       end
     end
-    render json: @friends
+    render json: { :users => @friends }
   end
   
   # GET /users
