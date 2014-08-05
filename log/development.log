@@ -7455,3 +7455,440 @@ Processing by UsersController#create as JSON
   [1m[35m (2.0ms)[0m  commit transaction
   [1m[36mAuthKey Load (0.2ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 15  ORDER BY "auth_keys"."id" ASC LIMIT 1[0m
 Completed 201 Created in 56ms (Views: 0.9ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-08-04 21:59:00 -0400
+Processing by UsersController#login as JSON
+  Parameters: {"phone_number"=>"9177637884", "password"=>"[FILTERED]", "user"=>{"phone_number"=>"9177637884", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."phone_number" = '9177637884' LIMIT 1
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-08-04 21:59:06 -0400
+Processing by UsersController#login as JSON
+  Parameters: {"phone_number"=>"19177637884", "password"=>"[FILTERED]", "user"=>{"phone_number"=>"19177637884", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."phone_number" = '19177637884' LIMIT 1[0m
+Completed 401 Unauthorized in 8ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+  [1m[36mUser Load (4.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mSQL (1.4ms)[0m  DELETE FROM "users"
+
+
+Started POST "/users" for 127.0.0.1 at 2014-08-04 22:00:55 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"phone_number"=>"9177637884", "password"=>"[FILTERED]", "first_name"=>"David", "last_name"=>"Mandelbaum", "user"=>{"phone_number"=>"9177637884", "password"=>"[FILTERED]", "first_name"=>"David", "last_name"=>"Mandelbaum"}}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = '19177637884' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("created_at", "first_name", "last_name", "password", "phone_number", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-08-05 02:00:55.970643"], ["first_name", "David"], ["last_name", "Mandelbaum"], ["password", "password"], ["phone_number", "19177637884"], ["updated_at", "2014-08-05 02:00:55.970643"]]
+  [1m[36mAuthKey Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'c061a83a42af58943093d3197b694b23' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["auth_key", "c061a83a42af58943093d3197b694b23"], ["created_at", "2014-08-05 02:00:55.980191"], ["updated_at", "2014-08-05 02:00:55.980191"], ["user_id", 16]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 16  ORDER BY "auth_keys"."id" ASC LIMIT 1
+Completed 201 Created in 56ms (Views: 0.7ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2014-08-04 22:01:09 -0400
+Processing by GroupsController#index as JSON
+  Parameters: {"auth_key"=>"c061a83a42af58943093d3197b694b23", "group"=>{}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'c061a83a42af58943093d3197b694b23' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" INNER JOIN "memberships" ON "groups"."id" = "memberships"."group_id" WHERE "memberships"."user_id" = ?[0m  [["user_id", 16]]
+  Rendered groups/index.json.jbuilder (4.9ms)
+Completed 200 OK in 24ms (Views: 8.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-08-04 22:01:31 -0400
+Processing by UsersController#login as JSON
+  Parameters: {"phone_number"=>"9177637884", "password"=>"[FILTERED]", "user"=>{"phone_number"=>"9177637884", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."phone_number" = '9177637884' LIMIT 1
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-08-04 22:01:47 -0400
+Processing by UsersController#login as JSON
+  Parameters: {"phone_number"=>"9177637884", "password"=>"[FILTERED]", "user"=>{"phone_number"=>"9177637884", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."phone_number" = '19177637884' LIMIT 1[0m
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 16  ORDER BY "auth_keys"."id" ASC LIMIT 1
+  [1m[36mAuthKey Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'cf2ff581bc715978d8e846580e4afafd' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mUPDATE "auth_keys" SET "auth_key" = ?, "updated_at" = ? WHERE "auth_keys"."id" = 16[0m  [["auth_key", "cf2ff581bc715978d8e846580e4afafd"], ["updated_at", "2014-08-05 02:01:47.613709"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+Completed 200 OK in 37ms (Views: 2.6ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-08-04 22:01:50 -0400
+Processing by UsersController#login as JSON
+  Parameters: {"phone_number"=>"19177637884", "password"=>"[FILTERED]", "user"=>{"phone_number"=>"19177637884", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."phone_number" = '19177637884' LIMIT 1[0m
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 16  ORDER BY "auth_keys"."id" ASC LIMIT 1
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-08-04 22:05:43 -0400
+Processing by PhotosController#create as JSON
+  Parameters: {"auth_key"=>"c061a83a42af58943093d3197b694b23", "location"=>"test", "photo"=>{"location"=>"test"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'c061a83a42af58943093d3197b694b23' LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `updated_at' for nil:NilClass):
+  app/controllers/application_controller.rb:38:in `restrict_access_by_params'
+  app/controllers/application_controller.rb:15:in `restrict_access'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-08-04 22:06:17 -0400
+Processing by UsersController#login as JSON
+  Parameters: {"phone_number"=>"9177637884", "password"=>"[FILTERED]", "user"=>{"phone_number"=>"9177637884", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."phone_number" = '19177637884' LIMIT 1
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 16  ORDER BY "auth_keys"."id" ASC LIMIT 1[0m
+  [1m[35mAuthKey Exists (0.1ms)[0m  SELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "auth_keys" SET "auth_key" = ?, "updated_at" = ? WHERE "auth_keys"."id" = 16  [["auth_key", "7531cec8012a99b6f40249ee81c033c6"], ["updated_at", "2014-08-05 02:06:17.915992"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-08-04 22:06:28 -0400
+Processing by PhotosController#create as JSON
+  Parameters: {"auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "location"=>"yoo", "photo"=>{"location"=>"yoo"}}
+  [1m[35mAuthKey Load (0.2ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 12ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/groups" for 127.0.0.1 at 2014-08-04 22:07:20 -0400
+Processing by GroupsController#create as JSON
+  Parameters: {"auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "name"=>"david's group", "group"=>{"name"=>"david's group"}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."phone_number" = '19177637884' AND "users"."id" != 16) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "groups" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-08-05 02:07:20.566019"], ["name", "david's group"], ["updated_at", "2014-08-05 02:07:20.566019"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "memberships" ("created_at", "group_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-08-05 02:07:20.567274"], ["group_id", 22], ["updated_at", "2014-08-05 02:07:20.567274"], ["user_id", 16]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36mMembership Load (0.1ms)[0m  [1mSELECT  "memberships".* FROM "memberships"  WHERE "memberships"."group_id" = 22 AND "memberships"."user_id" = 16 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "memberships" SET "owner" = ?, "updated_at" = ? WHERE "memberships"."id" = 43[0m  [["owner", "t"], ["updated_at", "2014-08-05 02:07:20.570862"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  Rendered groups/show.json.jbuilder (0.5ms)
+Completed 201 Created in 26ms (Views: 3.6ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 22:07:38 -0400
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "description"=>"test roll call 1", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "roll_call"=>{"duration"=>"30", "description"=>"test roll call 1"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "roll_calls" ("created_at", "description", "duration", "started", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-08-05 02:07:38.795030"], ["description", "test roll call 1"], ["duration", 30], ["started", "2014-08-05 02:07:38.794485"], ["updated_at", "2014-08-05 02:07:38.795030"], ["user_id", 16]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  Rendered roll_calls/show.json.jbuilder (0.5ms)
+Completed 201 Created in 13ms (Views: 3.6ms | ActiveRecord: 2.0ms)
+  [1m[36mSQL (2.0ms)[0m  [1mDELETE FROM "roll_calls"[0m
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 22:08:34 -0400
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "description"=>"test roll call 1", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "roll_call"=>{"duration"=>"30", "description"=>"test roll call 1"}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 25ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 22:08:37 -0400
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "description"=>"test roll call 1", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "group"=>"1", "roll_call"=>{"duration"=>"30", "description"=>"test roll call 1"}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 22:08:41 -0400
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "description"=>"test roll call 1", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "group_id"=>"1", "roll_call"=>{"duration"=>"30", "description"=>"test roll call 1", "group_id"=>"1"}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 22:09:19 -0400
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "description"=>"test roll call 1", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "group"=>"1", "roll_call"=>{"duration"=>"30", "description"=>"test roll call 1"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 36ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 22:11:03 -0400
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "description"=>"test roll call 1", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "group"=>"1", "roll_call"=>{"duration"=>"30", "description"=>"test roll call 1"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 25ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 22:11:08 -0400
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "description"=>"test roll call 1", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "group_id"=>"1", "roll_call"=>{"duration"=>"30", "description"=>"test roll call 1", "group_id"=>"1"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 5ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 22:11:33 -0400
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "description"=>"test roll call 1", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "group_id"=>"1", "roll_call"=>{"duration"=>"30", "description"=>"test roll call 1", "group_id"=>"1"}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 1]]
+Completed 404 Not Found in 20ms
+
+ActiveRecord::RecordNotFound (Couldn't find Group with 'id'=1):
+  app/controllers/roll_calls_controller.rb:38:in `create'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.4ms)
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups"
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 22:12:51 -0400
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "description"=>"test roll call 1", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "group_id"=>"1", "roll_call"=>{"duration"=>"30", "description"=>"test roll call 1", "group_id"=>"1"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+Completed 500 Internal Server Error in 22ms
+
+NameError (undefined local variable or method `id' for #<RollCallsController:0x007f9cb50958e0>):
+  app/controllers/roll_calls_controller.rb:39:in `create'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.0ms)
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 22:13:21 -0400
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "description"=>"test roll call 1", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "group_id"=>"1", "roll_call"=>{"duration"=>"30", "description"=>"test roll call 1", "group_id"=>"1"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mGroup Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "groups"  WHERE "groups"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 28ms
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/roll_calls_controller.rb:49:in `block (2 levels) in create'
+  app/controllers/roll_calls_controller.rb:45:in `create'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.5ms)
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 22:14:03 -0400
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "description"=>"test roll call 1", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "group_id"=>"1", "roll_call"=>{"duration"=>"30", "description"=>"test roll call 1", "group_id"=>"1"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mGroup Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "groups"  WHERE "groups"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 26ms (Views: 0.2ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 22:14:07 -0400
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "description"=>"test roll call 1", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "group_id"=>"22", "roll_call"=>{"duration"=>"30", "description"=>"test roll call 1", "group_id"=>"22"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mGroup Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "groups"  WHERE "groups"."id" = 22 LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 22]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "roll_calls" ("created_at", "description", "duration", "group_id", "started", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-08-05 02:14:07.157483"], ["description", "test roll call 1"], ["duration", 30], ["group_id", 22], ["started", "2014-08-05 02:14:07.153839"], ["updated_at", "2014-08-05 02:14:07.157483"], ["user_id", 16]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  Rendered roll_calls/show.json.jbuilder (0.2ms)
+Completed 201 Created in 11ms (Views: 2.7ms | ActiveRecord: 2.0ms)
+  [1m[36mSQL (1.9ms)[0m  [1mDELETE FROM "roll_calls"[0m
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 22:14:25 -0400
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "description"=>"test roll call 1", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "group_id"=>"1", "roll_call"=>{"duration"=>"30", "description"=>"test roll call 1", "group_id"=>"1"}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 25ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 22:14:27 -0400
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "description"=>"test roll call 1", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "group_id"=>"22", "roll_call"=>{"duration"=>"30", "description"=>"test roll call 1", "group_id"=>"22"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 22]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roll_calls" ("created_at", "description", "duration", "group_id", "started", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-05 02:14:27.173183"], ["description", "test roll call 1"], ["duration", 30], ["group_id", 22], ["started", "2014-08-05 02:14:27.170254"], ["updated_at", "2014-08-05 02:14:27.173183"], ["user_id", 16]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  Rendered roll_calls/show.json.jbuilder (0.2ms)
+Completed 201 Created in 10ms (Views: 2.6ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-08-04 22:15:48 -0400
+Processing by PhotosController#create as JSON
+  Parameters: {"roll_call_id"=>"7", "auth_key"=>"PARAMS", "photo"=>{"roll_call_id"=>"7"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'PARAMS' LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `updated_at' for nil:NilClass):
+  app/controllers/application_controller.rb:38:in `restrict_access_by_params'
+  app/controllers/application_controller.rb:15:in `restrict_access'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.1ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-08-04 22:16:15 -0400
+Processing by PhotosController#create as JSON
+  Parameters: {"roll_call_id"=>"7", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "location"=>"yooo", "photo"=>{"roll_call_id"=>"7", "location"=>"yooo"}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mRollCall Load (0.1ms)[0m  [1mSELECT  "roll_calls".* FROM "roll_calls"  WHERE "roll_calls"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "photos" ("created_at", "location", "roll_call_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-05 02:16:15.600921"], ["location", "yooo"], ["roll_call_id", 7], ["updated_at", "2014-08-05 02:16:15.600921"], ["user_id", 16]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  Rendered photos/show.json.jbuilder (0.8ms)
+Completed 201 Created in 14ms (Views: 3.7ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-08-04 22:25:13 -0400
+Processing by PhotosController#create as JSON
+  Parameters: {"roll_call_id"=>"7", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "location"=>"yooo", "photo"=>{"roll_call_id"=>"7", "location"=>"yooo"}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mRollCall Load (0.1ms)[0m  [1mSELECT  "roll_calls".* FROM "roll_calls"  WHERE "roll_calls"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "photos" ("created_at", "location", "roll_call_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-05 02:25:13.115434"], ["location", "yooo"], ["roll_call_id", 7], ["updated_at", "2014-08-05 02:25:13.115434"], ["user_id", 16]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+  Rendered photos/show.json.jbuilder (0.5ms)
+Completed 201 Created in 34ms (Views: 3.0ms | ActiveRecord: 4.7ms)
+  [1m[35mSQL (1.6ms)[0m  DELETE FROM "photos"
+  [1m[36mRollCall Load (0.2ms)[0m  [1mSELECT "roll_calls".* FROM "roll_calls"[0m
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 22:34:24 -0400
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "description"=>"test roll call 2", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "group_id"=>"22", "roll_call"=>{"duration"=>"30", "description"=>"test roll call 2", "group_id"=>"22"}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "roll_calls" ("created_at", "description", "duration", "group_id", "started", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-08-05 02:34:24.821395"], ["description", "test roll call 2"], ["duration", 30], ["group_id", 22], ["started", "2014-08-05 02:34:24.808533"], ["updated_at", "2014-08-05 02:34:24.821395"], ["user_id", 16]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  Rendered roll_calls/show.json.jbuilder (0.2ms)
+Completed 201 Created in 36ms (Views: 2.9ms | ActiveRecord: 2.4ms)
+  [1m[35mRollCall Load (0.2ms)[0m  SELECT "roll_calls".* FROM "roll_calls"
+
+
+Started POST "/groups" for 127.0.0.1 at 2014-08-04 22:34:38 -0400
+Processing by GroupsController#create as JSON
+  Parameters: {"auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "name"=>"david's other group", "group"=>{"name"=>"david's other group"}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."phone_number" = '19177637884' AND "users"."id" != 16) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "groups" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-08-05 02:34:38.858714"], ["name", "david's other group"], ["updated_at", "2014-08-05 02:34:38.858714"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "memberships" ("created_at", "group_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-08-05 02:34:38.859863"], ["group_id", 23], ["updated_at", "2014-08-05 02:34:38.859863"], ["user_id", 16]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36mMembership Load (0.1ms)[0m  [1mSELECT  "memberships".* FROM "memberships"  WHERE "memberships"."group_id" = 23 AND "memberships"."user_id" = 16 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "memberships" SET "owner" = ?, "updated_at" = ? WHERE "memberships"."id" = 44[0m  [["owner", "t"], ["updated_at", "2014-08-05 02:34:38.863225"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  Rendered groups/show.json.jbuilder (0.2ms)
+Completed 201 Created in 20ms (Views: 2.7ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 22:34:44 -0400
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "description"=>"test roll call 3", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "group_id"=>"23", "roll_call"=>{"duration"=>"30", "description"=>"test roll call 3", "group_id"=>"23"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 23]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "roll_calls" ("created_at", "description", "duration", "group_id", "started", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-05 02:34:44.719522"], ["description", "test roll call 3"], ["duration", 30], ["group_id", 23], ["started", "2014-08-05 02:34:44.718505"], ["updated_at", "2014-08-05 02:34:44.719522"], ["user_id", 16]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  Rendered roll_calls/show.json.jbuilder (0.2ms)
+Completed 201 Created in 9ms (Views: 2.5ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/roll_calls" for 127.0.0.1 at 2014-08-04 22:34:47 -0400
+Processing by RollCallsController#create as JSON
+  Parameters: {"duration"=>"30", "description"=>"test roll call 4", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "group_id"=>"23", "roll_call"=>{"duration"=>"30", "description"=>"test roll call 4", "group_id"=>"23"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 23]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "roll_calls" ("created_at", "description", "duration", "group_id", "started", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-05 02:34:47.502634"], ["description", "test roll call 4"], ["duration", 30], ["group_id", 23], ["started", "2014-08-05 02:34:47.501627"], ["updated_at", "2014-08-05 02:34:47.502634"], ["user_id", 16]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  Rendered roll_calls/show.json.jbuilder (0.2ms)
+Completed 201 Created in 8ms (Views: 2.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/roll_calls/show_group" for 127.0.0.1 at 2014-08-04 22:35:15 -0400
+Processing by RollCallsController#show_group as JSON
+  Parameters: {"group_id"=>"22", "roll_call"=>{"group_id"=>"22"}}
+Filter chain halted as :restrict_access rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/roll_calls/show_group" for 127.0.0.1 at 2014-08-04 22:35:20 -0400
+Processing by RollCallsController#show_group as JSON
+  Parameters: {"group_id"=>"22", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "roll_call"=>{"group_id"=>"22"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35mRollCall Load (0.1ms)[0m  SELECT "roll_calls".* FROM "roll_calls"  WHERE "roll_calls"."group_id" = ?  [["group_id", 22]]
+Completed 200 OK in 27ms (Views: 6.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/roll_calls/show_group" for 127.0.0.1 at 2014-08-04 22:35:25 -0400
+Processing by RollCallsController#show_group as JSON
+  Parameters: {"group_id"=>"23", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "roll_call"=>{"group_id"=>"23"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 23]]
+  [1m[35mRollCall Load (0.1ms)[0m  SELECT "roll_calls".* FROM "roll_calls"  WHERE "roll_calls"."group_id" = ?  [["group_id", 23]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.3ms)

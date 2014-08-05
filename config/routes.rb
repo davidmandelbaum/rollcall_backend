@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'login' => 'users#login'
 
   get 'find_friends' => 'users#find_friends'
+  
+  get 'roll_calls/show_group' => 'roll_calls#show_group'
 
   resources :likes
 

@@ -4,7 +4,11 @@ class UsersController < ApplicationController
   before_action :restrict_access, except: [:create, :login]
 
   def login
-    @user = User.find_by phone_number: params[:phone_number]
+    @phone = params[:phone_number]
+    if @phone.length == 10
+      @phone = "1" + @phone
+    end
+    @user = User.find_by phone_number: @phone
     respond_to do |format|
       if params[:password] and @user and @user.password == params[:password]
         @auth_key = AuthKey.where(user: @user).first

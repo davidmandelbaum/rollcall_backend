@@ -28,6 +28,8 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
 
+    @photo.user = @current_user
+
     respond_to do |format|
       if @photo.save
         format.json { render :show, status: :created, location: @photo }

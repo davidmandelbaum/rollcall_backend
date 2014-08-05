@@ -15,6 +15,12 @@ class RollCallsController < ApplicationController
     end
   end
 
+  def show_group
+    @group = Group.find(params[:group_id])
+    @roll_calls = @group.roll_calls
+    render json: @roll_calls
+  end
+
   # GET /roll_calls/1
   # GET /roll_calls/1.json
   def show
