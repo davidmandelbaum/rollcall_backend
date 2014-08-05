@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'login' => 'users#login'
 
+  get 'find_friends' => 'users#find_friends'
+
   resources :likes
 
   resources :photos

@@ -7204,3 +7204,12 @@ Processing by RollCallsController#index as JSON
   [1m[36mRollCall Load (0.1ms)[0m  [1mSELECT "roll_calls".* FROM "roll_calls"  WHERE "roll_calls"."group_id" = ?[0m  [["group_id", 21]]
   Rendered roll_calls/index.json.jbuilder (0.8ms)
 Completed 200 OK in 14ms (Views: 3.0ms | ActiveRecord: 0.7ms)
+  [1m[36mUser Load (3.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/login" for 127.0.0.1 at 2014-08-04 21:13:26 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#login as JSON
+  Parameters: {"phone_number"=>"9177637884", "password"=>"[FILTERED]", "user"=>{"phone_number"=>"9177637884", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."phone_number" = '9177637884' LIMIT 1
+Completed 401 Unauthorized in 21ms (Views: 0.1ms | ActiveRecord: 0.4ms)

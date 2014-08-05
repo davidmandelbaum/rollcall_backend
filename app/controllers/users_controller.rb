@@ -7,20 +7,27 @@ class UsersController < ApplicationController
     @user = User.find_by phone_number: params[:phone_number]
     respond_to do |format|
       if params[:password] and @user and @user.password == params[:password]
-        if @auth_key
-          @auth_key = AuthKey.where(user: @user).first
-          if @auth_key.updated_at < 10.seconds.ago
-            @auth_key.generate_token
-            @auth_key.save
-          end
-        else
-          format.json { render json: "Invalid username/password", status: 401 }
+        @auth_key = AuthKey.where(user: @user).first
+        if @auth_key.updated_at < 10.seconds.ago
+          @auth_key.generate_token
+          @auth_key.save
         end
         format.json { render json: { :auth_key => @auth_key, :user => @user }, status: :ok }
       else
         format.json { render json: "Invalid username/password", status: 401 }
       end
     end
+  end
+  
+  def find_friends
+    @users = params[:users]
+    @friends = []
+    @users.each do |u|
+      if User.exists? :phone_number => u
+        @friends << u
+      end
+    end
+    render json: @friends
   end
   
   # GET /users
