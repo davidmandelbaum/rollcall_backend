@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   
   # Validations
 
+  validates       :phone_number,  uniqueness: true
   # validates     :phone_number,  presence: true
   # phone number validation
   # validates     :password,      presence: true

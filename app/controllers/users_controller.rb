@@ -55,6 +55,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
+    if @user.phone_number.length == 10
+      @user.phone_number = "1" + @user.phone_number
+    end
+
+    @user.joined = Time.now
+
     respond_to do |format|
       if @user.save
         format.json { render json: { :auth_key => AuthKey.where(user: @user).first, :user => @user }, status: :created }

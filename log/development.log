@@ -7375,3 +7375,83 @@ Processing by UsersController#find_friends as JSON
   [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = 9175794854 LIMIT 1[0m
   [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = 2127557510 LIMIT 1
 Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-08-04 21:45:34 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"phone_number"=>"9177637884", "first_name"=>"david", "last_name"=>"mandelbaum", "user"=>{"phone_number"=>"9177637884", "first_name"=>"david", "last_name"=>"mandelbaum"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "first_name", "last_name", "phone_number", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-05 01:45:34.814990"], ["first_name", "david"], ["last_name", "mandelbaum"], ["phone_number", "19177637884"], ["updated_at", "2014-08-05 01:45:34.814990"]]
+  [1m[36mAuthKey Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'cfff521da2d26e08f5650d84cf43035d' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["auth_key", "cfff521da2d26e08f5650d84cf43035d"], ["created_at", "2014-08-05 01:45:34.818888"], ["updated_at", "2014-08-05 01:45:34.818888"], ["user_id", 11]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mAuthKey Load (0.2ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 11  ORDER BY "auth_keys"."id" ASC LIMIT 1
+Completed 201 Created in 20ms (Views: 0.5ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-08-04 21:47:14 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"phone_number"=>"9177637884", "first_name"=>"david", "last_name"=>"mandelbaum", "user"=>{"phone_number"=>"9177637884", "first_name"=>"david", "last_name"=>"mandelbaum"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = '19177637884' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 47ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+  [1m[36mSQL (4.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "groups"
+  [1m[36mSQL (2.3ms)[0m  [1mDELETE FROM "memberships"[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "roll_calls"
+
+
+Started POST "/users" for 127.0.0.1 at 2014-08-04 21:47:44 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"phone_number"=>"19177637884", "first_name"=>"david", "last_name"=>"mandelbaum", "user"=>{"phone_number"=>"19177637884", "first_name"=>"david", "last_name"=>"mandelbaum"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = '19177637884' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "first_name", "last_name", "phone_number", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-05 01:47:44.050283"], ["first_name", "david"], ["last_name", "mandelbaum"], ["phone_number", "19177637884"], ["updated_at", "2014-08-05 01:47:44.050283"]]
+  [1m[36mAuthKey Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'ca2962b7db38d70e8263be3b423dea95' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["auth_key", "ca2962b7db38d70e8263be3b423dea95"], ["created_at", "2014-08-05 01:47:44.054818"], ["updated_at", "2014-08-05 01:47:44.054818"], ["user_id", 12]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 12  ORDER BY "auth_keys"."id" ASC LIMIT 1
+Completed 201 Created in 16ms (Views: 0.6ms | ActiveRecord: 2.5ms)
+  [1m[36mSQL (1.2ms)[0m  [1mDELETE FROM "users"[0m
+
+
+Started POST "/users" for 127.0.0.1 at 2014-08-04 21:47:53 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"phone_number"=>"19177637884", "first_name"=>"david", "last_name"=>"mandelbaum", "user"=>{"phone_number"=>"19177637884", "first_name"=>"david", "last_name"=>"mandelbaum"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = '19177637884' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "first_name", "last_name", "phone_number", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-05 01:47:53.297247"], ["first_name", "david"], ["last_name", "mandelbaum"], ["phone_number", "19177637884"], ["updated_at", "2014-08-05 01:47:53.297247"]]
+  [1m[35mAuthKey Exists (0.1ms)[0m  SELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'df71a17da2d6217bd482a5773821c979' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["auth_key", "df71a17da2d6217bd482a5773821c979"], ["created_at", "2014-08-05 01:47:53.298893"], ["updated_at", "2014-08-05 01:47:53.298893"], ["user_id", 13]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 13  ORDER BY "auth_keys"."id" ASC LIMIT 1[0m
+Completed 201 Created in 8ms (Views: 0.5ms | ActiveRecord: 1.6ms)
+  [1m[35mSQL (1.7ms)[0m  DELETE FROM "users"
+
+
+Started POST "/users" for 127.0.0.1 at 2014-08-04 21:47:59 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"phone_number"=>"9177637884", "first_name"=>"david", "last_name"=>"mandelbaum", "user"=>{"phone_number"=>"9177637884", "first_name"=>"david", "last_name"=>"mandelbaum"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = '19177637884' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "first_name", "last_name", "phone_number", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-05 01:47:59.288806"], ["first_name", "david"], ["last_name", "mandelbaum"], ["phone_number", "19177637884"], ["updated_at", "2014-08-05 01:47:59.288806"]]
+  [1m[36mAuthKey Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '9d17077e7e58f47a8d15ec276f0a902a' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["auth_key", "9d17077e7e58f47a8d15ec276f0a902a"], ["created_at", "2014-08-05 01:47:59.290548"], ["updated_at", "2014-08-05 01:47:59.290548"], ["user_id", 14]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mAuthKey Load (0.2ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 14  ORDER BY "auth_keys"."id" ASC LIMIT 1
+Completed 201 Created in 12ms (Views: 0.5ms | ActiveRecord: 2.9ms)
+  [1m[36mSQL (2.2ms)[0m  [1mDELETE FROM "users"[0m
+
+
+Started POST "/users" for 127.0.0.1 at 2014-08-04 21:48:30 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"phone_number"=>"9177637884", "first_name"=>"david", "last_name"=>"mandelbaum", "user"=>{"phone_number"=>"9177637884", "first_name"=>"david", "last_name"=>"mandelbaum"}}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (1.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = '19177637884' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "first_name", "joined", "last_name", "phone_number", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-05 01:48:30.216414"], ["first_name", "david"], ["joined", "2014-08-05 01:48:30.202126"], ["last_name", "mandelbaum"], ["phone_number", "19177637884"], ["updated_at", "2014-08-05 01:48:30.216414"]]
+  [1m[35mAuthKey Exists (0.1ms)[0m  SELECT  1 AS one FROM "auth_keys"  WHERE "auth_keys"."auth_key" = 'ed3a27a50e90a674257bd15ef62b0441' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "auth_keys" ("auth_key", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["auth_key", "ed3a27a50e90a674257bd15ef62b0441"], ["created_at", "2014-08-05 01:48:30.225511"], ["updated_at", "2014-08-05 01:48:30.225511"], ["user_id", 15]]
+  [1m[35m (2.0ms)[0m  commit transaction
+  [1m[36mAuthKey Load (0.2ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."user_id" = 15  ORDER BY "auth_keys"."id" ASC LIMIT 1[0m
+Completed 201 Created in 56ms (Views: 0.9ms | ActiveRecord: 5.7ms)
