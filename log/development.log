@@ -7892,3 +7892,118 @@ Processing by RollCallsController#show_group as JSON
   [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 23]]
   [1m[35mRollCall Load (0.1ms)[0m  SELECT "roll_calls".* FROM "roll_calls"  WHERE "roll_calls"."group_id" = ?  [["group_id", 23]]
 Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-08-04 22:57:46 -0400
+Processing by PhotosController#create as JSON
+  Parameters: {"roll_call_id"=>"7", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "location"=>"yooo", "image_data"=>"blablablabal", "photo"=>{"roll_call_id"=>"7", "location"=>"yooo"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRollCall Load (0.1ms)[0m  SELECT  "roll_calls".* FROM "roll_calls"  WHERE "roll_calls"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "photos" ("created_at", "location", "roll_call_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-05 02:57:46.167522"], ["location", "yooo"], ["roll_call_id", 7], ["updated_at", "2014-08-05 02:57:46.167522"], ["user_id", 16]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  Rendered photos/show.json.jbuilder (0.5ms)
+Completed 201 Created in 32ms (Views: 3.5ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-08-04 22:58:59 -0400
+Processing by PhotosController#create as JSON
+  Parameters: {"roll_call_id"=>"7", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "location"=>"yooo", "image_data"=>"blablablabal", "photo"=>{"roll_call_id"=>"7", "location"=>"yooo"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRollCall Load (0.1ms)[0m  SELECT  "roll_calls".* FROM "roll_calls"  WHERE "roll_calls"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "photos" ("created_at", "location", "roll_call_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-05 02:58:59.324106"], ["location", "yooo"], ["roll_call_id", 7], ["updated_at", "2014-08-05 02:58:59.324106"], ["user_id", 16]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  Rendered photos/show.json.jbuilder (0.4ms)
+Completed 201 Created in 31ms (Views: 3.0ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-08-04 22:59:46 -0400
+Processing by PhotosController#create as JSON
+  Parameters: {"roll_call_id"=>"7", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "location"=>"yooo", "image_data"=>"blablablabal", "photo"=>{"roll_call_id"=>"7", "location"=>"yooo"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mRollCall Load (0.1ms)[0m  SELECT  "roll_calls".* FROM "roll_calls"  WHERE "roll_calls"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "photos" ("created_at", "location", "roll_call_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-05 02:59:46.747344"], ["location", "yooo"], ["roll_call_id", 7], ["updated_at", "2014-08-05 02:59:46.747344"], ["user_id", 16]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  Rendered photos/show.json.jbuilder (0.5ms)
+Completed 201 Created in 47ms (Views: 3.1ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-08-04 23:00:02 -0400
+Processing by PhotosController#create as JSON
+  Parameters: {"roll_call_id"=>"7", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "location"=>"yooo", "image_data"=>"blablablabal", "photo"=>{"roll_call_id"=>"7", "location"=>"yooo"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mRollCall Load (0.1ms)[0m  SELECT  "roll_calls".* FROM "roll_calls"  WHERE "roll_calls"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "photos" ("created_at", "location", "roll_call_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-05 03:00:02.770586"], ["location", "yooo"], ["roll_call_id", 7], ["updated_at", "2014-08-05 03:00:02.770586"], ["user_id", 16]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  Rendered photos/show.json.jbuilder (0.5ms)
+Completed 201 Created in 36ms (Views: 3.3ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-08-04 23:00:27 -0400
+Processing by PhotosController#create as JSON
+  Parameters: {"roll_call_id"=>"7", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "location"=>"yooo", "image_data"=>"blablablabal", "photo"=>{"roll_call_id"=>"7", "location"=>"yooo"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mRollCall Load (0.1ms)[0m  SELECT  "roll_calls".* FROM "roll_calls"  WHERE "roll_calls"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 31ms
+
+TypeError (no implicit conversion of nil into String):
+  app/models/photo.rb:26:in `+'
+  app/models/photo.rb:26:in `decode_image_data'
+  app/controllers/photos_controller.rb:33:in `block in create'
+  app/controllers/photos_controller.rb:32:in `create'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.3ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-08-04 23:00:38 -0400
+Processing by PhotosController#create as JSON
+  Parameters: {"roll_call_id"=>"7", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "location"=>"yooo", "image_data"=>"fartsfarts", "photo"=>{"roll_call_id"=>"7", "location"=>"yooo"}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mRollCall Load (0.1ms)[0m  [1mSELECT  "roll_calls".* FROM "roll_calls"  WHERE "roll_calls"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 4ms
+
+TypeError (no implicit conversion of nil into String):
+  app/models/photo.rb:26:in `+'
+  app/models/photo.rb:26:in `decode_image_data'
+  app/controllers/photos_controller.rb:33:in `block in create'
+  app/controllers/photos_controller.rb:32:in `create'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.2ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-08-04 23:00:56 -0400
+Processing by PhotosController#create as JSON
+  Parameters: {"roll_call_id"=>"7", "auth_key"=>"7531cec8012a99b6f40249ee81c033c6", "location"=>"yooo", "image_data"=>"fartsfarts", "photo"=>{"roll_call_id"=>"7", "location"=>"yooo"}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" = '7531cec8012a99b6f40249ee81c033c6' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mRollCall Load (0.1ms)[0m  SELECT  "roll_calls".* FROM "roll_calls"  WHERE "roll_calls"."id" = ? LIMIT 1  [["id", 7]]
+Command :: file -b --mime '/var/folders/2s/v61vywrn25ddp251x94jjv4c0000gn/T/6446d860dbbfe540e9e2cbab5f98f1e320140804-86258-n0d2jt'
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "photos" ("created_at", "location", "picture_content_type", "picture_file_name", "picture_file_size", "picture_updated_at", "roll_call_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-05 03:00:56.461145"], ["location", "yooo"], ["picture_content_type", "text/plain"], ["picture_file_name", ".png"], ["picture_file_size", 7], ["picture_updated_at", "2014-08-05 03:00:56.458775"], ["roll_call_id", 7], ["updated_at", "2014-08-05 03:00:56.461145"], ["user_id", 16]]
+[paperclip] saving /photos/pictures/000/000/007/original/.png
+[AWS S3 200 0.634099 0 retries] put_object(:acl=>:public_read,:bucket_name=>"rollcall_backend",:content_length=>7,:content_type=>"text/plain",:data=>Paperclip::StringioAdapter: .png,:key=>"photos/pictures/000/000/007/original/.png")  
+
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered photos/show.json.jbuilder (1.1ms)
+Completed 201 Created in 958ms (Views: 4.4ms | ActiveRecord: 2.8ms)
