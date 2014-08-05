@@ -7253,3 +7253,54 @@ Processing by UsersController#find_friends as JSON
   [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = 9175794854 LIMIT 1[0m
   [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."phone_number" = 2127557510 LIMIT 1
 Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/find_friends" for 127.0.0.1 at 2014-08-04 21:18:29 -0400
+Processing by UsersController#find_friends as JSON
+  Parameters: {"users"=>[9177637884, 9175794854, 2127557510], "user"=>{}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `updated_at' for nil:NilClass):
+  app/controllers/application_controller.rb:38:in `restrict_access_by_params'
+  app/controllers/application_controller.rb:15:in `restrict_access'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.5ms)
+
+
+Started GET "/find_friends" for 127.0.0.1 at 2014-08-04 21:18:46 -0400
+Processing by UsersController#find_friends as JSON
+  Parameters: {"users"=>[9177637884, 9175794854, 2127557510], "user"=>{}}
+  [1m[35mAuthKey Load (0.1ms)[0m  SELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 3ms
+
+NoMethodError (undefined method `updated_at' for nil:NilClass):
+  app/controllers/application_controller.rb:38:in `restrict_access_by_params'
+  app/controllers/application_controller.rb:15:in `restrict_access'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.9ms)
+
+
+Started GET "/find_friends" for 127.0.0.1 at 2014-08-04 21:19:13 -0400
+Processing by UsersController#find_friends as JSON
+  Parameters: {"users"=>[9177637884, 9175794854, 2127557510], "user"=>{}}
+  [1m[36mAuthKey Load (0.1ms)[0m  [1mSELECT  "auth_keys".* FROM "auth_keys"  WHERE "auth_keys"."auth_key" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `updated_at' for nil:NilClass):
+  app/controllers/application_controller.rb:38:in `restrict_access_by_params'
+  app/controllers/application_controller.rb:15:in `restrict_access'
+
+
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.3ms)

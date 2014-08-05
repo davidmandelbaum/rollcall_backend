@@ -9,11 +9,14 @@ class ApplicationController < ActionController::Base
   private
 
   def restrict_access
+    if params[:auth_key].blank?
+      render json: {message: 'No auth key sent'}, status: 401
+    else
     unless restrict_access_by_params || restrict_access_by_header
       render json: {message: 'Invalid Auth Key'}, status: 401
       return
     end
-
+    end
     @current_user = @auth_key.user if @auth_key
   end
 
