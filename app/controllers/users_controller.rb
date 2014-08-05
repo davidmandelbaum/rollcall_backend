@@ -59,8 +59,6 @@ class UsersController < ApplicationController
       @user.phone_number = "1" + @user.phone_number
     end
 
-    @user.joined = Time.now
-
     respond_to do |format|
       if @user.save
         format.json { render json: { :auth_key => AuthKey.where(user: @user).first, :user => @user }, status: :created }
